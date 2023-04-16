@@ -1,4 +1,2 @@
 # ijr-frondend
-Repositório para os membros do trainee ijr front end 2023/1
-
-testando commit
+Repositório para o projeto Final da Equipe 01 do Trainee iJunior 2023/01
