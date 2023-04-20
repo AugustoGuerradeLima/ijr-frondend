@@ -2,13 +2,10 @@ import React from "react";
 import TrashIcon from "../images/trash.svg";
 import HeartIcon from "../images/heart.svg";
 
-<<<<<<< HEAD
 import './Song.css'
 
-export const Song = (props) => {
-=======
 const Song = (props) => {
->>>>>>> fb22d9fbb24c9842b4bbd7894da3f755767baf08
+
   return (
     <div className="container">
       <div className="song">
@@ -28,6 +25,5 @@ const Song = (props) => {
     </div>
   );
 };
-
 
 export default Song
