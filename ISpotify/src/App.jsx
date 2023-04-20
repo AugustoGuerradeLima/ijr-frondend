@@ -15,14 +15,12 @@ function App() {
   const [songs,setSongs] = useState([
     {
       id:1,
-      number:1,
       songName:"The Zephyr Song",
       artistName:"Red Hot Chili Peppers",
       albumName:"By the way",
     },
     {
       id:2,
-      number:2,
       songName:"Talk",
       artistName:"Coldplay",
       albumName:"X&Y",
@@ -68,10 +66,10 @@ function App() {
 
       <hr />
 
-      {songs.map((song=>(
+      {songs.map(((song,index)=>(
         <Song
           key={song.id}
-          number={song.number}
+          number= {index+1}
           songName={song.songName}
           artistName={song.artistName}
           albumName={song.albumName}
