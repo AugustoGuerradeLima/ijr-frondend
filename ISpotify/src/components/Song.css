@@ -1,6 +1,15 @@
-.heart-icon{
-cursor:pointer;
+.song{
+  display: flex;
 }
-.trash-icon{
-cursor:pointer;
+
+.heart-icon {
+  cursor: pointer;
+}
+
+.trash-icon {
+  cursor: pointer;
+}
+
+#hide {
+  display: none;
 }
