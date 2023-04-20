@@ -23,13 +23,8 @@ const Song = (props) => {
           <p className="heart-icon">
             <img src={HeartIcon} alt="like button" id="like-button"/>
           </p>
-<<<<<<< HEAD
           <p className="trash-icon" onClick={()=>props.removeSong()}>
             <img src={TrashIcon} alt="delete button" />
-=======
-          <p className="trash-icon">
-            <img src={TrashIcon} alt="delete button" id="delete-button" onClick={handleHide}/>
->>>>>>> 2a5085ccbf8787020e7309d2db5f381130ee9abe
           </p>
         </div>
       </div>
