@@ -14,12 +14,14 @@ function App() {
 
   const [songs,setSongs] = useState([
     {
+      id:1,
       number:1,
       songName:"The Zephyr Song",
       artistName:"Red Hot Chili Peppers",
       albumName:"By the way",
     },
     {
+      id:2,
       number:2,
       songName:"Talk",
       artistName:"Coldplay",
@@ -27,8 +29,8 @@ function App() {
     }
   ])
 
-  const removeSong = (number) =>{
-    const updatedSongs = songs.filter((song)=>{song.number !== number})
+  const removeSong = (id) =>{
+    const updatedSongs = songs.filter((song)=>song.id !== id)
     setSongs(updatedSongs)
   }
 
@@ -68,12 +70,12 @@ function App() {
 
       {songs.map((song=>(
         <Song
-          key={song.number}
+          key={song.id}
           number={song.number}
           songName={song.songName}
           artistName={song.artistName}
           albumName={song.albumName}
-          removeSong={()=>removeSong(song.number)}
+          removeSong={()=>removeSong(song.id)}
         />
       )))}
       

@@ -1,15 +1,7 @@
-.song{
-  display: flex;
-}
-
 .heart-icon {
   cursor: pointer;
 }
 
 .trash-icon {
   cursor: pointer;
-}
-
-#hide {
-  display: none;
 }
