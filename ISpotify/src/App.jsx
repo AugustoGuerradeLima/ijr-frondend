@@ -1,3 +1,5 @@
+import { useState , useEffect} from 'react'
+
 import DownloadIcon from "./images/download.svg";
 import HeartIcon from "./images/heart.svg";
 import PlayButton from "./images/playButton.png";
@@ -9,6 +11,22 @@ import { Playlist } from "./components/Playlist";
 import { Song } from "./components/Song";
 
 function App() {
+
+  const [songs,setSongs] = useState([
+    {
+      number:1,
+      songName:"The Zephyr Song",
+      artistName:"Red Hot Chili Peppers",
+      albumName:"By the way",
+    },
+    {
+      number:2,
+      songName:"Talk",
+      artistName:"Coldplay",
+      albumName:"X&Y",
+    }
+  ])
+
   return (
     <div className="App">
       <Playlist
@@ -43,13 +61,16 @@ function App() {
 
       <hr />
 
-      <Song
-        number="1"
-        songName="The Zephyr Song"
-        artistName="Red Hot Chili Peppers"
-        albumName="By the way"
-      />
-      <Song number="2" songName="Talk" artistName="Coldplay" albumName="X&Y" />
+      {songs.map((song=>(
+        <Song
+          key={song.number}
+          number={song.number}
+          songName={song.songName}
+          artistName={song.artistName}
+          albumName={song.albumName}
+        />
+      )))}
+      
     </div>
   );
 }
