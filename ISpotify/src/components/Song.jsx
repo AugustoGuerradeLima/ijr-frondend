@@ -1,10 +1,23 @@
 import React from "react";
+import { useState } from "react";
 import TrashIcon from "../images/trash.svg";
-import HeartIcon from "../images/heart.svg";
+import HeartIconUnliked from "../images/heart.svg";
+import HeartIconLiked from "../images/heart-v2.svg";
 
 import './Song.css'
 
-const Song = ({number,songName,artistName,albumName,removeSong}) => {
+const Song = ({ number, songName, artistName, albumName, removeSong }) => {
+
+  const [likeHeart, setLikeHeart] = useState(false)
+
+  const handleLikeHeart = () => {
+    if (likeHeart == false) {
+      setLikeHeart(true)
+    } else {
+      setLikeHeart(false)
+    }
+
+  }
 
   return (
     <div className="container">
@@ -14,11 +27,16 @@ const Song = ({number,songName,artistName,albumName,removeSong}) => {
         <p className="artist-name">{artistName}</p>
         <p className="album-name">{albumName}</p>
         <div className="icons">
-          <p className="heart-icon">
-            <img src={HeartIcon} alt="like button" id="like-button"/>
-          </p>
-          <p className="trash-icon" onClick={()=>removeSong()}>
-            <img src={TrashIcon} alt="delete button" />
+          {!likeHeart ?
+            (<p className="heart-icon">
+              <img src={HeartIconUnliked} alt="unlike button" id={likeHeart} onClick={handleLikeHeart} />
+            </p>) :
+            (<p className="heart-icon">
+              <img src={HeartIconLiked} alt="like button" id={likeHeart} onClick={handleLikeHeart} />
+            </p>)}
+
+          <p className="trash-icon" onClick={() => removeSong()}>
+            <img src={TrashIcon} alt="delete button" id="trash-icon" />
           </p>
         </div>
       </div>
