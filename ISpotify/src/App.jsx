@@ -5,8 +5,8 @@ import ThreeDots from "./images/threeDots.png";
 import ClockIcon from "./images/clock.svg";
 
 import "./App.css";
-import { Playlist } from "./components/Playlist";
-import { Song } from "./components/Song";
+import Playlist from "./components/Playlist"
+import Song from "./components/Song"
 
 function App() {
   return (
