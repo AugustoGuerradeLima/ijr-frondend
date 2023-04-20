@@ -27,6 +27,11 @@ function App() {
     }
   ])
 
+  const removeSong = (number) =>{
+    const updatedSongs = songs.filter((song)=>{song.number !== number})
+    setSongs(updatedSongs)
+  }
+
   return (
     <div className="App">
       <Playlist
@@ -68,6 +73,7 @@ function App() {
           songName={song.songName}
           artistName={song.artistName}
           albumName={song.albumName}
+          removeSong={()=>removeSong(song.number)}
         />
       )))}
       

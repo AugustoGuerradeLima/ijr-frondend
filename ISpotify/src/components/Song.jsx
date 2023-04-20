@@ -17,7 +17,7 @@ const Song = (props) => {
           <p className="heart-icon">
             <img src={HeartIcon} alt="like button" />
           </p>
-          <p className="trash-icon">
+          <p className="trash-icon" onClick={()=>props.removeSong()}>
             <img src={TrashIcon} alt="delete button" />
           </p>
         </div>
