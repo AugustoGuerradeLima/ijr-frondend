@@ -22,10 +22,14 @@ const Song = ({ number, songName, artistName, albumName, removeSong }) => {
   return (
     <div className="container">
       <div className="song">
-        <span>{number}</span>
-        <p className="song-name">{songName}</p>
-        <p className="artist-name">{artistName}</p>
-        <p className="album-name">{albumName}</p>
+        <div className="info">
+         <span>{number}</span>
+         <div className="name">
+            <p className="song-name">{songName}</p>
+            <p className="artist-name">{artistName}</p>
+          </div>
+          <p className="album-name">{albumName}</p>
+        </div>
         <div className="icons">
           {!likeHeart ?
             (<p className="heart-icon">
