@@ -13,7 +13,7 @@ export const Playlist = (props) => {
         <p className="playlist">Playlist</p>
         <h1 className="daily-mix">{props.name}</h1>
         <div className="more-info">
-          <p>{props.nrtists}</p>
+          <p>{props.artists}</p>
           <p>Spotify - {props.numberOfSongs} músicas</p>
           <p className="duration">{props.duration}</p>
         </div>
