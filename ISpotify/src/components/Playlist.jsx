@@ -1,6 +1,8 @@
 import React from "react";
 import AlbumCover from "../images/albumcover.png";
 
+import './Playlist.css'
+
 const Playlist = (props) => {
   return (
     <div className="container">
