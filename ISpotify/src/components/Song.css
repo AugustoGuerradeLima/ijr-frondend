@@ -1,0 +1,42 @@
+.song{
+  display: flex;
+}
+
+.info{
+  display: flex;
+  width: 1500px;
+}
+
+.icons{
+  display: flex;
+  width: 20%;
+}
+
+.name{
+  width: 60%;
+  display: inline;
+  margin-top: 0.5rem;
+}
+
+.album-name{
+  width: 20%;
+}
+
+span{
+  width: 2%;
+  margin-top: 1rem;
+}
+
+.heart-icon {
+  cursor: pointer;
+}
+
+.heart-hide{
+  display: none;
+}
+
+.trash-icon {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}

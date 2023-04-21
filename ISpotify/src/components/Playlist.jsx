@@ -1,7 +1,9 @@
 import React from "react";
 import AlbumCover from "../images/albumcover.png";
 
-export const Playlist = (props) => {
+import './Playlist.css'
+
+const Playlist = (props) => {
   return (
     <div className="container">
       <div className="album-cover">
@@ -21,3 +23,5 @@ export const Playlist = (props) => {
     </div>
   );
 };
+
+export default Playlist
