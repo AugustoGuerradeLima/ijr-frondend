@@ -43,22 +43,22 @@ function App() {
 
       <div className="buttons-line">
         <p className="play-button">
-          <img src={PlayButton} alt="play button" />
+          <img className='PB' src={PlayButton} alt="play button" />
         </p>
         <p className="heart-button">
-          <img src={HeartIcon} alt="like button" />
+          <img className='HB' src={HeartIcon} alt="like button" />
         </p>
         <p className="download-button">
-          <img src={DownloadIcon} alt="download button" />
+          <img className='DB' src={DownloadIcon} alt="download button" />
         </p>
         <p className="three-dots">
-          <img src={ThreeDots} alt="know more button" />
+          <img className='TD' src={ThreeDots} alt="know more button" />
         </p>
       </div>
 
       <div className="songs-top-line">
-        <p>#TÍTULO</p>
-        <p>ÁLBUM</p>
+        <p className='title'>#TÍTULO</p>
+        <p className='album'>ÁLBUM</p>
         <p className="clock-icon">
           <img src={ClockIcon} alt="clock icon" />
         </p>
