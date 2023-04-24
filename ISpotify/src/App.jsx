@@ -1,7 +1,8 @@
-import { useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 import DownloadIcon from "./images/download.svg";
-import HeartIcon from "./images/heart.svg";
+import HeartIconUnliked from "./images/heart.svg";
+import HeartIconLiked from "./images/heart-v2.svg";
 import PlayButton from "./images/playButton.png";
 import ThreeDots from "./images/threeDots.png";
 import ClockIcon from "./images/clock.svg";
@@ -12,24 +13,41 @@ import Song from "./components/Song"
 
 function App() {
 
-  const [songs,setSongs] = useState([
+  const [songs, setSongs] = useState([
     {
-      id:1,
-      songName:"The Zephyr Song",
-      artistName:"Red Hot Chili Peppers",
-      albumName:"By the way",
+      id: 1,
+      songName: "The Zephyr Song",
+      artistName: "Red Hot Chili Peppers",
+      albumName: "By the way",
     },
     {
-      id:2,
-      songName:"Talk",
-      artistName:"Coldplay",
-      albumName:"X&Y",
+      id: 2,
+      songName: "Talk",
+      artistName: "Coldplay",
+      albumName: "X&Y",
+    },
+    {
+      id: 3,
+      songName: "Cidade Negra",
+      artistName: "Firmamento",
+      albumName: "Cidade Negra Acústico MTV",
     }
   ])
 
-  const removeSong = (id) =>{
-    const updatedSongs = songs.filter((song)=>song.id !== id)
+  const removeSong = (id) => {
+    const updatedSongs = songs.filter((song) => song.id !== id)
     setSongs(updatedSongs)
+  }
+
+  const [likeHeart, setLikeHeart] = useState(false)
+
+  const handleLikeHeart = () => {
+    if (likeHeart == false) {
+      setLikeHeart(true)
+    } else {
+      setLikeHeart(false)
+    }
+
   }
 
   return (
@@ -45,9 +63,13 @@ function App() {
         <p className="play-button">
           <img className='PB' src={PlayButton} alt="play button" />
         </p>
-        <p className="heart-button">
-          <img className='HB' src={HeartIcon} alt="like button" />
-        </p>
+        {!likeHeart ?
+          (<p className="heart-button">
+            <img className='HB' src={HeartIconUnliked} alt="unlike button" id={likeHeart} onClick={handleLikeHeart} />
+          </p>) :
+          (<p className="heart-button">
+            <img className='HB' src={HeartIconLiked} alt="like button" id={likeHeart} onClick={handleLikeHeart} />
+          </p>)}
         <p className="download-button">
           <img className='DB' src={DownloadIcon} alt="download button" />
         </p>
@@ -66,17 +88,17 @@ function App() {
 
       <hr />
 
-      {songs.map(((song,index)=>(
+      {songs.map(((song, index) => (
         <Song
           key={song.id}
-          number= {index+1}
+          number={index + 1}
           songName={song.songName}
           artistName={song.artistName}
           albumName={song.albumName}
-          removeSong={()=>removeSong(song.id)}
+          removeSong={() => removeSong(song.id)}
         />
       )))}
-      
+
     </div>
   );
 }

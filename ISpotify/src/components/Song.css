@@ -1,10 +1,12 @@
 .song{
   display: flex;
+  margin-top: 1rem;
+  margin-left: 10px;
 }
 
 .info{
   display: flex;
-  width: 1500px;
+  width: 1400px;
 }
 
 .icons{
