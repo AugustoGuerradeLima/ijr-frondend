@@ -20,7 +20,7 @@ const Song = ({ number, songName, artistName, albumName, removeSong }) => {
   }
 
   return (
-    <div className="container">
+    <div className="song-container">
       <div className="song">
         <div className="info">
          <span>{number}</span>

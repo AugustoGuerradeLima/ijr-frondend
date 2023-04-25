@@ -1,17 +1,21 @@
+.song-container{
+  width: 100%;
+}
+
 .song{
   display: flex;
   margin-top: 1rem;
   margin-left: 10px;
+  width: 100%;
 }
 
 .info{
   display: flex;
-  width: 1400px;
+  width: 92%;
 }
 
 .icons{
   display: flex;
-  width: 20%;
 }
 
 .name{

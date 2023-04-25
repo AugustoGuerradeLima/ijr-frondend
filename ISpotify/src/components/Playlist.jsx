@@ -5,7 +5,7 @@ import './Playlist.css'
 
 const Playlist = (props) => {
   return (
-    <div className="container">
+    <div className="playlist-container">
       <div className="album-cover">
         <p className="album">
           <img src={AlbumCover} alt="album cover" />

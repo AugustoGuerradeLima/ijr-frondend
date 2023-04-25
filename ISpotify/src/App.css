@@ -8,12 +8,16 @@
 .App{
   margin-top: 8.3rem;
   margin-left: 3rem;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .buttons-line{
   display: flex;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 
@@ -48,16 +52,17 @@
   display: flex;
   margin-left: 10px;
   margin-bottom: 5px;
+  width: 100%;
 }
 
 .title{
-  width: 54.5%;
+  width: 57%;
 }
 
 .album{
-  width: 35%;
+  width: 38%;
 }
 
 hr{
-  width: 1320px;
+  width: 100%;
 }

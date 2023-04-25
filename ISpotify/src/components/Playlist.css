@@ -1,13 +1,15 @@
-.container{
+.playlist-container {
     display: flex;
+    margin-bottom: 10rem;
+    width: 100%;
 }
 
-.top-info{
+.top-info {
     margin-left: 2rem;
     margin-top: 5rem;
     font-size: 22px;
 }
 
-.playlist{
+.playlist {
     margin-bottom: 1rem;
 }
