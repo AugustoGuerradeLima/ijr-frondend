@@ -1,0 +1,29 @@
+.top-playlist-container {
+    display: flex;
+    margin-bottom: 10rem;
+    width: 100%;
+}
+
+.top-info {
+    margin-left: 2rem;
+    /* margin-top: 5rem; */
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: normal; */
+    justify-content: space-between;
+}
+
+.playlist {
+    margin-top: 2rem;
+}
+
+.number-songs-hours{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.duration{
+    margin-left: 1rem;
+    color: rgba(255, 255, 255, 0.44);
+}
