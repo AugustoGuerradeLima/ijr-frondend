@@ -10,8 +10,8 @@ import ClockIcon from "../../images/clock.svg";
 
 import "./Playlist.css"
 
-import TopPlaylist from '../../components/TopPlaylist';
-import SongPlaylist from '../../components/SongPlaylist';
+import TopPlaylist from '../../components/TopPlaylist/TopPlaylist';
+import SongPlaylist from '../../components/SongPlaylist/SongPlaylist';
 
 const Playlist = () => {
 

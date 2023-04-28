@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import TrashIcon from "../images/trash.svg";
-import HeartIconUnliked from "../images/heart.svg";
-import HeartIconLiked from "../images/heart-v2.svg";
+import TrashIcon from "../../images/trash.svg";
+import HeartIconUnliked from "../../images/heart.svg";
+import HeartIconLiked from "../../images/heart-v2.svg";
 
 import './SongPlaylist.css'
 

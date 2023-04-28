@@ -1,5 +1,5 @@
 import React from "react";
-import AlbumCover from "../images/albumcover.png";
+import AlbumCover from "../../images/albumcover.png";
 
 import './TopPlaylist.css'
 
