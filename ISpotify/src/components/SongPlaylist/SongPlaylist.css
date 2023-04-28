@@ -1,47 +1,43 @@
-.song-playlist-container{
+.song-playlist-container {
   width: 100%;
 }
 
-.song{
+.song-playlist-container .song {
   display: flex;
   margin-top: 1rem;
   margin-left: 10px;
   width: 100%;
 }
 
-.info{
+.song-playlist-container .song .info {
   display: flex;
   width: 92%;
 }
 
-.icons{
+.song-playlist-container .song .icons {
   display: flex;
 }
 
-.name{
+.song-playlist-container .song .info .name {
   width: 60%;
   display: inline;
   margin-top: 0.5rem;
 }
 
-.album-name{
+.song-playlist-container .song .info .album-name {
   width: 20%;
 }
 
-span{
+.song-playlist-container .song .info span {
   width: 2%;
   margin-top: 1rem;
 }
 
-.heart-icon {
+.song-playlist-container .song .icons .heart-icon {
   cursor: pointer;
 }
 
-.heart-hide{
-  display: none;
-}
-
-.trash-icon {
+.song-playlist-container .song .icons .trash-icon {
   cursor: pointer;
   margin-top: 0.5rem;
   margin-left: 0.5rem;

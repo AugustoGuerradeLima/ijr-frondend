@@ -6,56 +6,57 @@
   padding-left: 3rem;
   padding-top: 9rem;
   background: linear-gradient(to bottom, #17A6E4, black);
+  color: aliceblue
 }
 
-.buttons-line{
+.playlist-container .buttons-line{
   display: flex;
   margin-bottom: 6rem;
 }
 
 
-.PB{
+.playlist-container .buttons-line .play-button .PB{
   max-width: 60px;
   margin-right: 1rem;
   cursor: pointer;
 }
 
-.HB{
+.playlist-container .buttons-line .heart-button .HB{
   margin-top: 5px;
   max-width: 40px;
   margin-right: 1rem;
   cursor: pointer;
 }
 
-.DB{
+.playlist-container .buttons-line .download-button .DB{
   margin-top: 10px;
   max-width: 40px;
   margin-right: 1rem;
   cursor: pointer;
 }
 
-.TD{
+.playlist-container .buttons-line .three-dots .TD{
   margin-left: 0.2rem;
   margin-top: 20px;
   max-width: 40px;
   cursor: pointer;
 }
 
-.songs-top-line{
+.playlist-container .songs-top-line{
   display: flex;
   margin-left: 10px;
   margin-bottom: 5px;
   width: 100%;
 }
 
-.title{
+.playlist-container .songs-top-line .title{
   width: 57%;
 }
 
-.album{
+.playlist-container .songs-top-line .album{
   width: 37%;
 }
 
-hr{
+.playlist-container hr{
   width: 99%;
 }

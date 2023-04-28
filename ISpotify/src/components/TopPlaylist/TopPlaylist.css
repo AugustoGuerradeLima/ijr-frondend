@@ -4,7 +4,7 @@
     width: 100%;
 }
 
-.top-info {
+.top-playlist-container .top-info {
     margin-left: 2rem;
     /* margin-top: 5rem; */
     font-size: 22px;
@@ -14,16 +14,16 @@
     justify-content: space-between;
 }
 
-.playlist {
+.top-playlist-container .top-info .playlist {
     margin-top: 2rem;
 }
 
-.number-songs-hours{
+.top-playlist-container .top-info .more-info .number-songs-hours{
     display: flex;
     margin-top: 1rem;
 }
 
-.duration{
+.top-playlist-container .top-info .more-info .duration{
     margin-left: 1rem;
     color: rgba(255, 255, 255, 0.44);
 }
