@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Artist = () => {
+import "./Artist.css"
+
+const Artist = (props) => {
   return (
-    <div>Artist</div>
+    <div>
+      <p>{props.artistName}</p>
+      <p>{props.artistType}</p>
+    </div>
   )
 }
 
