@@ -4,9 +4,9 @@ import "./Artist.css"
 
 const Artist = (props) => {
   return (
-    <div>
-      <p>{props.artistName}</p>
-      <p>{props.artistType}</p>
+    <div className='artist-list-container'>
+      {/* <p>{props.artistName}</p>
+      <p>{props.artistType}</p> */}
     </div>
   )
 }
