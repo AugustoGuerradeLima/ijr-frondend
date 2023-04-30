@@ -2,8 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 import DownloadIcon from "../../images/download.svg";
-import HeartIconUnliked from "../../images/heart.svg";
-import HeartIconLiked from "../../images/heart-v2.svg";
+import HeartIconUnliked from "../../images/heart-unliked.svg";
+import HeartIconLiked from "../../images/heart-liked.svg";
 import PlayButton from "../../images/playButton.png";
 import ThreeDots from "../../images/threeDots.png";
 import ClockIcon from "../../images/clock.svg";
