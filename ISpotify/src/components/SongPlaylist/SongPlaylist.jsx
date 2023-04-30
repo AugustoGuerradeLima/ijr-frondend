@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import TrashIcon from "../images/trash.svg";
-import HeartIconUnliked from "../images/heart.svg";
-import HeartIconLiked from "../images/heart-v2.svg";
+import TrashIcon from "../../images/trash.svg";
+import HeartIconUnliked from "../../images/heart.svg";
+import HeartIconLiked from "../../images/heart-v2.svg";
 
-import './Song.css'
+import './SongPlaylist.css'
 
-const Song = ({ number, songName, artistName, albumName, removeSong }) => {
+const SongPlaylist = ({ number, songName, artistName, albumName, removeSong }) => {
 
   const [likeHeart, setLikeHeart] = useState(false)
 
@@ -20,7 +20,7 @@ const Song = ({ number, songName, artistName, albumName, removeSong }) => {
   }
 
   return (
-    <div className="container">
+    <div className="song-playlist-container">
       <div className="song">
         <div className="info">
          <span>{number}</span>
@@ -48,4 +48,4 @@ const Song = ({ number, songName, artistName, albumName, removeSong }) => {
   );
 };
 
-export default Song
+export default SongPlaylist

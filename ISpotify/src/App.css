@@ -2,62 +2,9 @@
 
 * {
   font-family: "Inter", sans-serif;
-  color: aliceblue;
+  /* color: aliceblue; */
 }
 
-.App{
-  margin-top: 8.3rem;
-  margin-left: 3rem;
+/* .App{
 }
-
-.buttons-line{
-  display: flex;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-
-.PB{
-  max-width: 60px;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-
-.HB{
-  margin-top: 5px;
-  max-width: 40px;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-
-.DB{
-  margin-top: 10px;
-  max-width: 40px;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-
-.TD{
-  margin-left: 0.2rem;
-  margin-top: 20px;
-  max-width: 40px;
-  cursor: pointer;
-}
-
-.songs-top-line{
-  display: flex;
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
-
-.title{
-  width: 54.5%;
-}
-
-.album{
-  width: 35%;
-}
-
-hr{
-  width: 1320px;
-}
+ */

@@ -1,0 +1,29 @@
+.top-playlist-container {
+    display: flex;
+    margin-bottom: 10rem;
+    width: 100%;
+}
+
+.top-playlist-container .top-info {
+    margin-left: 2rem;
+    /* margin-top: 5rem; */
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: normal; */
+    justify-content: space-between;
+}
+
+.top-playlist-container .top-info .playlist {
+    margin-top: 2rem;
+}
+
+.top-playlist-container .top-info .more-info .number-songs-hours{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.top-playlist-container .top-info .more-info .duration{
+    margin-left: 1rem;
+    color: rgba(255, 255, 255, 0.44);
+}
