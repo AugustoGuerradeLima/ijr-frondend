@@ -11,7 +11,7 @@ const FavArtists = () => {
   return (
     <div className='fav-artists-container'>
       <Navbar />
-      <h2>Ola Mundo</h2>
+      <Artists />
     </div>
   )
 }

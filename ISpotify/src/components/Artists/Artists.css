@@ -1,0 +1,10 @@
+.artist-container {
+  /* color: black; */
+  width: 80%;
+  padding: 2.5rem;
+  background-color: #181818;
+}
+
+.artist-container h2{
+  margin-top: 2rem;
+}

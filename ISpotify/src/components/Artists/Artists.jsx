@@ -2,9 +2,11 @@ import React from 'react'
 
 import "./Artists.css"
 
-const Artists = () => {
+const Artists = (props) => {
   return (
-    <div>Artists</div>
+    <div className='artist-container'>
+      <h2>Artistas</h2>
+    </div>
   )
 }
 
