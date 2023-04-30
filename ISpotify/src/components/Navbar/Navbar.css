@@ -1,0 +1,12 @@
+.navbar-container{
+  /* background-color: black; */
+  border: 1px solid red;
+  min-height: 100vh;
+  width: 20%;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.navbar-container .artist-button .AD{
+  max-width: 40px;
+}

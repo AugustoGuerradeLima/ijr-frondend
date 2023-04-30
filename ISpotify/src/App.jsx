@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 
 import "./App.css";
 import Playlist from './pages/Playlist/Playlist';
-import FavMusics from './pages/FavMusics/FavMusics';
+import FavArtists from './pages/FavArtists/FavArtists';
 
 function App() {
 
   return (
     <div className="App">
-      <Playlist />
-      {/* <FavMusics /> */}
+      {/* <Playlist /> */}
+      <FavArtists />
     </div>
   );
 }
