@@ -12,17 +12,17 @@ const Navbar = () => {
       <h1 className="logo">iSpotify ®</h1>
 
       <div className="artistas-musicas">
-        <img className="AD" src={AlbumDisc} alt="album disc" />
+        <img className="imgs-navbar" src={AlbumDisc} alt="album disc" />
         <h4>Artistas</h4>
       </div>
 
       <div className="artistas-musicas">
-        <img className="AD" src={HeartDefault} alt="album disc" />
+        <img className="imgs-navbar" src={HeartDefault} alt="album disc" />
         <h4>Músicas Curtidas</h4>
       </div>
 
       <div className="logout">
-        <img className="AD" src={Logout} alt="album disc" />
+        <img className="imgs-navbar" src={Logout} alt="album disc" />
         <h4>Logout</h4>
       </div>
     </div>
