@@ -1,11 +1,5 @@
-.artist-container {
-  /* color: black; */
-  width: 85%;
-  padding: 2.5rem;
-  background-color: #181818;
-}
-
-.artist-container h2{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.artists-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }

@@ -5,9 +5,14 @@
   color: aliceblue;
   border: 1px solid black;
   display: flex;
+  background-color: #181818;
 }
 
-.fav-artists-container h2{
+h2{
+  margin-bottom:50px;
+}
 
+.artist-section{
+  padding:5vh;
 }
 

@@ -9,7 +9,7 @@ import "./Artists.css"
 
 const Artists = () => {
 
-  // const [artists, setArtists] = useState([
+  // const [artistsTEST, setArtistsTEST] = useState([
   //   {
   //     id: 1,
   //     artistName: "Engenheiros do Hawaii",
@@ -54,10 +54,9 @@ const Artists = () => {
   }, [])
 
   return (
-    <div className='artist-container'>
-      <h2>Artistas</h2>
+      <div className='artist-grid'>
       <Artist artists={artists}/>
-      {/* {artists.map(((artist, index) => (
+      {/* {artistsTEST.map(((artist, index) => (
         <Artist
           key={artist.id}
           number={index + 1}
@@ -65,7 +64,7 @@ const Artists = () => {
           artistType={artist.Type}
         />
       )))} */}
-    </div>
+      </div>
   )
 }
 
