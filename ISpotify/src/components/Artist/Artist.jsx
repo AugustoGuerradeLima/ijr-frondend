@@ -5,8 +5,9 @@ import "./Artist.css"
 const Artist = (props) => {
   return (
     <div className='artistCard'>
-      {/* <p className='artistName'>{props.artistName}</p>
-      <p className='artistType'>{props.artistType}</p> */}
+      <img className='artistImage' src= {props.artistImage}/>
+      <p className='artistName'>{props.artistName}</p>
+      <p className='artistType'>{props.artistType}</p>
     </div>
   )
 }

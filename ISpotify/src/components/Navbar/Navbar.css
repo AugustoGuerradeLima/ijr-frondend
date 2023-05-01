@@ -4,11 +4,12 @@
 } */
 
 .navbar {
-  width: 15%;
+  width: 20%;
   min-height: 100vh;
   background-color: black;
   padding: 1rem;
 }
+
 .AD {
   max-width: 40px;
 }

@@ -39,6 +39,7 @@ const Artists = () => {
         url: artists?.images[0]?.url,
         name: artists?.name,
         id: artists?.id,
+        type: artists?.type
       }))
 
       setArtists(artistList)
@@ -55,15 +56,14 @@ const Artists = () => {
 
   return (
       <div className='artist-grid'>
-      <Artist artists={artists}/>
-      {/* {artistsTEST.map(((artist, index) => (
+      {artists.map(((artist) => (
         <Artist
           key={artist.id}
-          number={index + 1}
-          artistName={artist.artistName}
-          artistType={artist.Type}
+          artistImage={artist.url}
+          artistName={artist.name}
+          artistType={artist.type}
         />
-      )))} */}
+      )))}
       </div>
   )
 }
