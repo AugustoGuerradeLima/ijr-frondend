@@ -8,12 +8,12 @@
   background-color: #181818;
 }
 
-h2{
-  margin-bottom:50px;
+.artist-section {
+  padding: 5rem;
+  width: 80%;
 }
 
-.artist-section{
-  padding:5vh;
-  width:80%;
+.fav-artists-container .artist-section h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
 }
-

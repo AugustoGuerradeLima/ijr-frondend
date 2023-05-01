@@ -18,6 +18,7 @@
   display: flex;
   justify-content: center;
   padding-bottom: 5px;
+  cursor: pointer;
 }
 
 h4 {
@@ -36,14 +37,17 @@ h4:hover {
   justify-content: center;
   padding-top: 60px;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 
 .logout {
   display: flex;
-  /* position: fixed; */
+  position: fixed;
   justify-content: center;
   align-items: center;
-  /* bottom: 1rem;
-  left: 3.8rem; */
+  bottom: 1rem;
+  left: 3.8rem;
    margin-top: 40rem; 
+   cursor: pointer;
+   align-self: center;
 }

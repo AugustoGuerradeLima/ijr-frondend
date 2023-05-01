@@ -1,5 +1,7 @@
 .artist-grid{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  /* grid-template-columns: repeat(5, 1fr); */
+  flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
