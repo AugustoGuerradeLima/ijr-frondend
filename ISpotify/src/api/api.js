@@ -5,7 +5,7 @@ const api = axios.create({
   withCredentials: true,
 })
 
-const token = "BQAMfWh46KbHbm_tqhtakdXiPvB1pNh4RwgifDHn5xSy846PyQ64Uz8oE3-McAFZAFAT6zgHwLncmY9H_Sz65-htIxaaQwsRj2FNOj43S8jYATWSv65g";
+const token = "BQDBMGSfMMjFM99fypHyVcXc3ZSAt-1-CVb5-jAEGxZ8vSjt_FKreZDTWLYKuSrWhZ1CU8okRQmJiXFKdGur-qPzp2iz43oKzOG6Wstn6oIfqo6TEPO2";
 
 const apiSpotify = axios.create({
   baseURL: "https://api.spotify.com/v1/",
