@@ -42,7 +42,7 @@ const Cadastro = () => {
       </form>
 
       <span>
-        Já é um usuário do iSpotify? <a href="#">FAÇA LOGIN</a>
+        Já é um usuário do iSpotify?<a href="#"> FAÇA LOGIN</a>
       </span>
     </div>
   );
