@@ -42,6 +42,14 @@
   padding: 10px;
 }
 
+.navbar a:link {
+  text-decoration: none;
+}
+
+.navbar a:visited {
+  color: #fff;
+}
+
 .navbar h4:hover {
   opacity: 1;
 }

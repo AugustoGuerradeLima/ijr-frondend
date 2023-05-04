@@ -1,8 +1,13 @@
 import React from "react";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 import Email from "../../images/Email.svg";
 import Cadeado from "../../images/Cadeado.svg";
+
+/* const navigateToFavArtists = () => {
+  navigate("/favArtists");
+}; */
 
 const Login = () => {
   return (
@@ -28,11 +33,17 @@ const Login = () => {
           </div>
         </div>
 
-        <button>Entrar</button>
+        <h2 className="button">
+          <Link to={"/favArtists"}>Entrar</Link>
+        </h2>
+        {/* <button onClick={navigateToFavArtists}>Entrar</button> */}
       </form>
 
       <span>
-        Não tem uma conta? <a href="#">Inscreva-se.</a>
+        Não tem uma conta?{" "}
+        <p>
+          <Link to={"/cadastro"}>Inscreva-se</Link>
+        </p>
       </span>
     </div>
   );

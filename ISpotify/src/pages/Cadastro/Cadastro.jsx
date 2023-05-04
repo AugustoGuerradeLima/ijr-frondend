@@ -1,5 +1,6 @@
 import React from "react";
 import "./Cadastro.css";
+import { Link } from "react-router-dom";
 
 import Email from "../../images/Email.svg";
 import Cadeado from "../../images/Cadeado.svg";
@@ -38,11 +39,17 @@ const Cadastro = () => {
           </div>
         </div>
 
-        <button>Cadastrar</button>
+        {/* Teoricamente, isso teria que ser estilizado como um botão. */}
+        <h2 className="button">
+          <Link to={"/favArtists"}>Cadastrar</Link>
+        </h2>
       </form>
 
       <span>
-        Já é um usuário do iSpotify?<a href="#"> FAÇA LOGIN</a>
+        Já é um usuário do iSpotify?
+        <p>
+          <Link to={"/"}>FAÇA O LOGIN</Link>
+        </p>
       </span>
     </div>
   );
