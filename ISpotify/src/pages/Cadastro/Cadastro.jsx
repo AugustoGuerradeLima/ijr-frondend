@@ -16,11 +16,15 @@ const Cadastro = () => {
   const createUser = async(e)=>{
     e.preventDefault()
 
-    const post = {name,email,password,role:'user'}
+    const newUser = {name,email,password,role:'user'}
 
-    await api.post("/users",post)
-
-    navigate("/")
+    try{
+      const response = await api.post("/users",newUser)
+      console.log('Usuário Cadastrado!',response.newUser)
+      navigate("/")
+    }catch(error){
+      console.error('Erro ao Cadastrar Usuário:',error);
+    }
   }
 
   return (
