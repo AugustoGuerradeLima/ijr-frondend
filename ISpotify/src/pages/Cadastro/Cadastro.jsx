@@ -18,7 +18,7 @@ const Cadastro = () => {
 
     const post = {name,email,password,role:'user'}
 
-    await api.post("/users",{body:post,})
+    await api.post("/users",post)
 
     navigate("/")
   }
@@ -60,7 +60,7 @@ const Cadastro = () => {
           </div>
         </div>
 
-        <input type="submit" value="Cadastrar" className="button"/>
+        <input type="submit" value="Cadastrar" className="button" />
 
         {/* Teoricamente, isso teria que ser estilizado como um botão.
         <h2 className="button">
