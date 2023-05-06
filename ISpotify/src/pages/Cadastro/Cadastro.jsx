@@ -64,7 +64,7 @@ const Cadastro = () => {
           </div>
         </div>
 
-        <input type="submit" value="Cadastrar" className="button" />
+        <input type="submit" value="CADASTRAR" className="b" />
 
         {/* Teoricamente, isso teria que ser estilizado como um botão.
         <h2 className="button">
