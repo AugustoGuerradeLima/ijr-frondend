@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import "./Cadastro.css";
 import { api } from '../../api/api'
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Alert, AlertTitle } from '@mui/material';
 
 
@@ -17,7 +18,10 @@ const Cadastro = () => {
 
   const [errorEmail, setErrorEmail] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [errorEveryVars, setErrorEveryVars] = useState(false)
   const [users,setUsers]= useState([])
+
+  const navigate = useNavigate()
 
   // const createUser = async(e)=>{
   //   e.preventDefault()
@@ -36,8 +40,15 @@ const Cadastro = () => {
   const handleSubmit = (e) =>{
     e.preventDefault()
 
+    if (!email || !password || !name) {
+      setErrorEveryVars(true);
+      setErrorEmail(false)
+      return;
+    }
+
     setSuccess(false)
     setErrorEmail(false)
+    setErrorEveryVars(false)
 
     const users = JSON.parse(localStorage.getItem("users")) || []
 
@@ -46,6 +57,7 @@ const Cadastro = () => {
     if (foundUser) {
       console.error("Esse e-mail já está sendo utilizado.")
       setErrorEmail(true)
+      // console.log(users[0].password)
     } else {
       setErrorEmail(false)
       setSuccess(true)
@@ -54,11 +66,17 @@ const Cadastro = () => {
       users.push(newUser)
       localStorage.setItem("users", JSON.stringify(users))
       console.log("Usuário cadastrado com sucesso!")
+      navigate("/")
     }
   }
 
   return (
     <div className="main-container">
+      <div>
+      {errorEveryVars?(<Alert variant="filled" severity="error">Por favor, preencha todos os campos.</Alert>):
+      (<div></div>)
+      }
+    </div>
     <div>
       {errorEmail?(<Alert variant="filled" severity="error">Esse e-mail já está sendo utilizado.</Alert>):
       (<div></div>)
@@ -81,7 +99,6 @@ const Cadastro = () => {
             placeholder="Email" 
             name="email" 
             value={email}
-            required
             onChange={(e)=>setEmail(e.target.value)}/>
             <img className="icon" src={Email} alt="email icon" />
           </div>
@@ -90,9 +107,9 @@ const Cadastro = () => {
             <input
               type="password"
               placeholder="Crie uma senha"
+              minLength="4"
               name="password"
               value={password}
-              required
               onChange={(e)=>setPassword(e.target.value)}/>
             <img className="icon" src={Cadeado} alt="password icon" />
           </div>
@@ -103,7 +120,6 @@ const Cadastro = () => {
               placeholder="Como devemos chamar você?"
               name="name"
               value={name}
-              required
               onChange={(e)=>setName(e.target.value)}/>
             <img className="icon" src={User} alt="user icon" />
           </div>
