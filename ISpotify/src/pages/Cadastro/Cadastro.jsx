@@ -9,21 +9,35 @@ import User from "../../images/User.svg";
 
 const Cadastro = () => {
 
-  const [email,setEmail]=useState("");
-  const [password,setPassword]=useState("");
-  const [name,setName]=useState("");
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+  const [name,setName]=useState('');
 
-  const createUser = async(e)=>{
+  // const createUser = async(e)=>{
+  //   e.preventDefault()
+
+  //   const newUser = {name,email,password,role:'user'}
+
+  //   try{
+  //     const response = await api.post("/users",newUser)
+  //     console.log('Usuário Cadastrado!',response.newUser)
+  //     navigate("/")
+  //   }catch(error){
+  //     console.error('Erro ao Cadastrar Usuário:',error);
+  //   }
+  // }
+
+  const handleSubmit = (e) =>{
     e.preventDefault()
 
-    const newUser = {name,email,password,role:'user'}
-
-    try{
-      const response = await api.post("/users",newUser)
-      console.log('Usuário Cadastrado!',response.newUser)
-      navigate("/")
-    }catch(error){
-      console.error('Erro ao Cadastrar Usuário:',error);
+    if(email == localStorage.getItem('email')){
+      console.error('E-mail já cadastrado.')
+    }
+    else{
+      localStorage.setItem('name', name)
+      localStorage.setItem('email', email)
+      localStorage.setItem('password', password)
+      console.log('Cadastro realizado com sucesso!')
     }
   }
 
@@ -31,7 +45,7 @@ const Cadastro = () => {
     <div className="main-container">
       <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
 
-      <form action="" method="post" onSubmit={(e)=>createUser(e)}>
+      <form action="" method="post" onSubmit={handleSubmit}>
         <div className="container">
           <div className="email-container">
             <input 
