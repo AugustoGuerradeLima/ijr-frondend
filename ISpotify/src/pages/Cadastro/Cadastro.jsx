@@ -74,12 +74,13 @@ const Cadastro = () => {
     <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
 
       <form action="" method="post" onSubmit={handleSubmit}>
-        <div className="container">
+        <div className="form-container">
           <div className="email-container">
             <input 
             type="email" 
             placeholder="Email" 
             name="email" 
+            value={email}
             required
             onChange={(e)=>setEmail(e.target.value)}/>
             <img className="icon" src={Email} alt="email icon" />
@@ -90,6 +91,7 @@ const Cadastro = () => {
               type="password"
               placeholder="Crie uma senha"
               name="password"
+              value={password}
               required
               onChange={(e)=>setPassword(e.target.value)}/>
             <img className="icon" src={Cadeado} alt="password icon" />
@@ -100,13 +102,14 @@ const Cadastro = () => {
               type="text"
               placeholder="Como devemos chamar você?"
               name="name"
+              value={name}
               required
               onChange={(e)=>setName(e.target.value)}/>
             <img className="icon" src={User} alt="user icon" />
           </div>
         </div>
 
-        <input type="submit" value="CADASTRAR" className="b" />
+        <input type="submit" value="CADASTRAR" className="btn-cadastro" />
 
         {/* Teoricamente, isso teria que ser estilizado como um botão.
         <h2 className="button">

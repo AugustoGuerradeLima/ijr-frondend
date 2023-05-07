@@ -9,12 +9,12 @@
     text-align: center;
 }
 
-.logo{
+.main-container .logo{
     font-size: 42px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.Title{
+.main-container .Title{
    /* border: 1px solid red;*/
     margin-top: 35px;
     width: 100%;
@@ -22,76 +22,80 @@
     font-size: 30px;
 }
 
-.email-container{
+.main-container .form-container .email-container{
     width: 400px;
     margin-top: 2rem;
     background-color: #3c3c3c;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
 }
 
-.email-container input{
+.main-container .form-container .email-container input{
     width: 100%;
     border: none;
     color: #868686;
     font-size: 22px;
     margin: 0;
     width: 90%;
-    background-color: #3c3c3c   ;
+    background-color: #3c3c3c;
 }
 
-.email-container input:focus{
+.main-container .form-container .email-container input:focus{
     outline: none;
 }
 
-.icon{
+.main-container .form-container .icon{
     width: 30px;
     height: 30px;
 }
 
-
-
-.password-container{
+.main-container .form-container .password-container{
     margin-top: 2rem;
     background-color: #3c3c3c;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
 }
 
-.password-container input{
+.main-container .form-container .password-container input{
     border: none;
     color: #868686;
     font-size: 22px;
     margin: 1px;
     width: 90%;
-    background-color: #3c3c3c   ;
+    background-color: #3c3c3c;
 }
 
-.password-container input:focus{
+.main-container .form-container .password-container input:focus{
     outline: none;
 }
 
-.button{
-    font-size: 20px;
-    margin-top: 2.5rem;
+.main-container .btn-login{
     background-color: white;
     color: black;
+    font-size: 20px;
+    margin-top: 2.5rem;
     border-radius: 20px;
     width: 65%;
     height: 45px;
-    text-decoration-line: none;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
 }
 
-.button:hover{
+.main-container .btn-login:hover{
     border: white 1px solid;
     background-color: #1E1E1E;
     color: white;
 }
 
-.button a{
+.main-container .btn-login a{
     text-decoration: none;
     color: black;
 }
 
-form{
+.main-container form{
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -99,12 +103,13 @@ form{
     text-align: center;
 }
 
-span{
+.main-container span{
     margin-top: 2rem;
     display: flex;
+    font-weight: bold;
 }
 
-a{
+.main-container a{
     color: white;
 }
 

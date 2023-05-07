@@ -1,29 +1,43 @@
-.user-name-container{
-    width: 400px;
-    margin-top: 2rem;
-    background-color: #3c3c3c;
+.main-container{
+    background-color: #141414;
+    color: white;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-.user-name-container input{
+.main-container .form-container .user-name-container{
+    max-width: 400px;
+    margin-top: 2rem;
+    background-color: #3c3c3c;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.main-container .form-container .user-name-container input{
     width: 100%;
     border: none;
     color: #868686;
     font-size: 22px;
     margin: 0;
     width: 90%;
-    background-color: #3c3c3c   ;
+    background-color: #3c3c3c;
 }
 
-.user-name-container input:focus{
+.main-container .form-container .user-name-container input:focus{
     outline: none;
 }
 
-.title{
+.main-container .title{
     max-width: 400px;
     font-size: 38px;
 }
 
-.b{
+.main-container .btn-cadastro{
     background-color: #3FE168;
     color: white;
     font-size: 20px;
@@ -33,14 +47,15 @@
     height: 45px;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
 }
 
-.b:hover{
+.main-container .btn-cadastro:hover{
     background-color: #141414;
     border: #3FE168 solid 1px;
 }
 
 
-span a{
+.main-container span a{
     margin-left: 3px;
 }
