@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import "./Cadastro.css";
 import { api } from '../../api/api'
 import { Link } from "react-router-dom";
+import { Alert, AlertTitle } from '@mui/material';
+
 
 import Email from "../../images/Email.svg";
 import Cadeado from "../../images/Cadeado.svg";
@@ -9,9 +11,12 @@ import User from "../../images/User.svg";
 
 const Cadastro = () => {
 
-  const [email,setEmail]=useState('');
-  const [password,setPassword]=useState('');
-  const [name,setName]=useState('');
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+  const [name,setName]=useState('')
+
+  const [errorEmail, setErrorEmail] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   // const createUser = async(e)=>{
   //   e.preventDefault()
@@ -30,20 +35,38 @@ const Cadastro = () => {
   const handleSubmit = (e) =>{
     e.preventDefault()
 
+    setSuccess(false)
+    setErrorEmail(false)
+
     if(email == localStorage.getItem('email')){
-      console.error('E-mail já cadastrado.')
+      console.error('Esse e-mail já está sendo utilizado.')
+      setErrorEmail(true)
     }
     else{
+      setErrorEmail(false)
+      setSuccess(true)
       localStorage.setItem('name', name)
       localStorage.setItem('email', email)
       localStorage.setItem('password', password)
-      console.log('Cadastro realizado com sucesso!')
+      console.log('Usuário Cadastrado com sucesso!')
     }
   }
 
   return (
     <div className="main-container">
-      <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
+    <div>
+      {errorEmail?(<Alert variant="filled" severity="error">Esse e-mail já está sendo utilizado.</Alert>):
+      (<div></div>)
+      }
+    </div>
+
+    <div>
+      {success?(<Alert variant="filled" severity="success">Usuário Cadastrado com sucesso!</Alert>):
+      (<div></div>)
+      }
+    </div>
+    
+    <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
 
       <form action="" method="post" onSubmit={handleSubmit}>
         <div className="container">
