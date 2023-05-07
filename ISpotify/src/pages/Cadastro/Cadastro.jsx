@@ -17,6 +17,7 @@ const Cadastro = () => {
 
   const [errorEmail, setErrorEmail] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [users,setUsers]= useState([])
 
   // const createUser = async(e)=>{
   //   e.preventDefault()
@@ -38,17 +39,21 @@ const Cadastro = () => {
     setSuccess(false)
     setErrorEmail(false)
 
-    if(email == localStorage.getItem('email')){
-      console.error('Esse e-mail já está sendo utilizado.')
+    const users = JSON.parse(localStorage.getItem("users")) || []
+
+    const foundUser = users.find((user) => user.email === email)
+
+    if (foundUser) {
+      console.error("Esse e-mail já está sendo utilizado.")
       setErrorEmail(true)
-    }
-    else{
+    } else {
       setErrorEmail(false)
       setSuccess(true)
-      localStorage.setItem('name', name)
-      localStorage.setItem('email', email)
-      localStorage.setItem('password', password)
-      console.log('Usuário Cadastrado com sucesso!')
+
+      const newUser = { name, email, password }
+      users.push(newUser)
+      localStorage.setItem("users", JSON.stringify(users))
+      console.log("Usuário cadastrado com sucesso!")
     }
   }
 
