@@ -34,15 +34,15 @@ const Login = () => {
         </div>
 
         <h2 className="button">
-          <Link to={"/favArtists"}>Entrar</Link>
+          <Link to={"/favArtists"}>ENTRAR</Link>
         </h2>
         {/* <button onClick={navigateToFavArtists}>Entrar</button> */}
       </form>
 
       <span>
-        Não tem uma conta?{" "}
+        NÃO TEM UMA CONTA ?{" "}
         <p>
-          <Link to={"/cadastro"}>Inscreva-se</Link>
+          <Link to={"/cadastro"}> Inscreva-se</Link>
         </p>
       </span>
     </div>

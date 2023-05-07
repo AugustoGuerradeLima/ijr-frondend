@@ -1,0 +1,46 @@
+.user-name-container{
+    width: 400px;
+    margin-top: 2rem;
+    background-color: #3c3c3c;
+}
+
+.user-name-container input{
+    width: 100%;
+    border: none;
+    color: #868686;
+    font-size: 22px;
+    margin: 0;
+    width: 90%;
+    background-color: #3c3c3c   ;
+}
+
+.user-name-container input:focus{
+    outline: none;
+}
+
+.title{
+    max-width: 400px;
+    font-size: 38px;
+}
+
+.b{
+    background-color: #3FE168;
+    color: white;
+    font-size: 20px;
+    margin-top: 2.5rem;
+    border-radius: 20px;
+    width: 65%;
+    height: 45px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.b:hover{
+    background-color: #141414;
+    border: #3FE168 solid 1px;
+}
+
+
+span a{
+    margin-left: 3px;
+}

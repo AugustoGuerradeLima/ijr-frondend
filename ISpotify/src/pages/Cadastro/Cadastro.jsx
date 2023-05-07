@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import "./Cadastro.css";
 import { api } from '../../api/api'
 import { Link } from "react-router-dom";
+import { Alert, AlertTitle } from '@mui/material';
+
 
 import Email from "../../images/Email.svg";
 import Cadeado from "../../images/Cadeado.svg";
@@ -9,29 +11,69 @@ import User from "../../images/User.svg";
 
 const Cadastro = () => {
 
-  const [email,setEmail]=useState("");
-  const [password,setPassword]=useState("");
-  const [name,setName]=useState("");
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+  const [name,setName]=useState('')
 
-  const createUser = async(e)=>{
+  const [errorEmail, setErrorEmail] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [users,setUsers]= useState([])
+
+  // const createUser = async(e)=>{
+  //   e.preventDefault()
+
+  //   const newUser = {name,email,password,role:'user'}
+
+  //   try{
+  //     const response = await api.post("/users",newUser)
+  //     console.log('Usuário Cadastrado!',response.newUser)
+  //     navigate("/")
+  //   }catch(error){
+  //     console.error('Erro ao Cadastrar Usuário:',error);
+  //   }
+  // }
+
+  const handleSubmit = (e) =>{
     e.preventDefault()
 
-    const newUser = {name,email,password,role:'user'}
+    setSuccess(false)
+    setErrorEmail(false)
 
-    try{
-      const response = await api.post("/users",newUser)
-      console.log('Usuário Cadastrado!',response.newUser)
-      navigate("/")
-    }catch(error){
-      console.error('Erro ao Cadastrar Usuário:',error);
+    const users = JSON.parse(localStorage.getItem("users")) || []
+
+    const foundUser = users.find((user) => user.email === email)
+
+    if (foundUser) {
+      console.error("Esse e-mail já está sendo utilizado.")
+      setErrorEmail(true)
+    } else {
+      setErrorEmail(false)
+      setSuccess(true)
+
+      const newUser = { name, email, password }
+      users.push(newUser)
+      localStorage.setItem("users", JSON.stringify(users))
+      console.log("Usuário cadastrado com sucesso!")
     }
   }
 
   return (
     <div className="main-container">
-      <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
+    <div>
+      {errorEmail?(<Alert variant="filled" severity="error">Esse e-mail já está sendo utilizado.</Alert>):
+      (<div></div>)
+      }
+    </div>
 
-      <form action="" method="post" onSubmit={(e)=>createUser(e)}>
+    <div>
+      {success?(<Alert variant="filled" severity="success">Usuário Cadastrado com sucesso!</Alert>):
+      (<div></div>)
+      }
+    </div>
+    
+    <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
+
+      <form action="" method="post" onSubmit={handleSubmit}>
         <div className="container">
           <div className="email-container">
             <input 
@@ -64,7 +106,7 @@ const Cadastro = () => {
           </div>
         </div>
 
-        <input type="submit" value="Cadastrar" className="button" />
+        <input type="submit" value="CADASTRAR" className="b" />
 
         {/* Teoricamente, isso teria que ser estilizado como um botão.
         <h2 className="button">
