@@ -1,5 +1,8 @@
 import React,{useState} from "react";
+
 import "./Cadastro.css";
+import Navbar from "../../components/Navbar/Navbar";
+
 import { api } from '../../api/api'
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
