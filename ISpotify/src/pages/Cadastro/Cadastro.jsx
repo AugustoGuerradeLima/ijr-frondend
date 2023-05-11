@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 import "./Cadastro.css";
 import Navbar from "../../components/Navbar/Navbar";
@@ -15,32 +15,33 @@ import User from "../../images/User.svg";
 
 const Cadastro = () => {
 
-  const [email,setEmail]=useState('')
-  const [password,setPassword]=useState('')
-  const [name,setName]=useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
 
   const [errorEmail, setErrorEmail] = useState(false)
   const [success, setSuccess] = useState(false)
   const [errorEveryVars, setErrorEveryVars] = useState(false)
-  const [users,setUsers]= useState([])
+  const [users, setUsers] = useState([])
 
   const navigate = useNavigate()
 
-  // const createUser = async(e)=>{
-  //   e.preventDefault()
+  const createUser = async (e) => {
+    e.preventDefault()
 
-  //   const newUser = {name,email,password,role:'user'}
+    const newUser = { name, email, password, role: 'user' }
 
-  //   try{
-  //     const response = await api.post("/users",newUser)
-  //     console.log('Usuário Cadastrado!',response.newUser)
-  //     navigate("/")
-  //   }catch(error){
-  //     console.error('Erro ao Cadastrar Usuário:',error);
-  //   }
-  // }
+    try {
+      await api.post("/users", newUser)
+      // await api.post("/users/login", { email, password })
+      console.log('Usuário Cadastrado!')
+      navigate("/")
+    } catch (error) {
+      console.error('Erro ao Cadastrar Usuário:', error);
+    }
+  }
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!email || !password || !name) {
@@ -76,33 +77,33 @@ const Cadastro = () => {
   return (
     <div className="main-container">
       <div>
-      {errorEveryVars?(<Alert variant="filled" severity="error">Por favor, preencha todos os campos.</Alert>):
-      (<div></div>)
-      }
-    </div>
-    <div>
-      {errorEmail?(<Alert variant="filled" severity="error">Esse e-mail já está sendo utilizado.</Alert>):
-      (<div></div>)
-      }
-    </div>
+        {errorEveryVars ? (<Alert variant="filled" severity="error">Por favor, preencha todos os campos.</Alert>) :
+          (<div></div>)
+        }
+      </div>
+      <div>
+        {errorEmail ? (<Alert variant="filled" severity="error">Esse e-mail já está sendo utilizado.</Alert>) :
+          (<div></div>)
+        }
+      </div>
 
-    <div>
-      {success?(<Alert variant="filled" severity="success">Usuário Cadastrado com sucesso!</Alert>):
-      (<div></div>)
-      }
-    </div>
-    
-    <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
+      <div>
+        {success ? (<Alert variant="filled" severity="success">Usuário Cadastrado com sucesso!</Alert>) :
+          (<div></div>)
+        }
+      </div>
+
+      <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
 
       <form action="" method="post" onSubmit={handleSubmit}>
         <div className="form-container">
           <div className="email-container">
-            <input 
-            type="email" 
-            placeholder="Email" 
-            name="email" 
-            value={email}
-            onChange={(e)=>setEmail(e.target.value)}/>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)} />
             <img className="icon" src={Email} alt="email icon" />
           </div>
 
@@ -113,7 +114,7 @@ const Cadastro = () => {
               minLength="4"
               name="password"
               value={password}
-              onChange={(e)=>setPassword(e.target.value)}/>
+              onChange={(e) => setPassword(e.target.value)} />
             <img className="icon" src={Cadeado} alt="password icon" />
           </div>
 
@@ -123,7 +124,7 @@ const Cadastro = () => {
               placeholder="Como devemos chamar você?"
               name="name"
               value={name}
-              onChange={(e)=>setName(e.target.value)}/>
+              onChange={(e) => setName(e.target.value)} />
             <img className="icon" src={User} alt="user icon" />
           </div>
         </div>

@@ -24,6 +24,7 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   const handleLogout = async () => {
+    localStorage.removeItem("lastUser")
     navigate("/")
   }
 
