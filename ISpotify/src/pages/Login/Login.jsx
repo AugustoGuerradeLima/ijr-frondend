@@ -21,6 +21,8 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState(false)
   const [errorEveryVars, setErrorEveryVars] = useState(false)
 
+  // const [lastUser, setLastUser] = useState([])
+
   const navigate = useNavigate()
 
   // const createLogin = async(e) => {
@@ -61,10 +63,15 @@ const Login = () => {
       setErrorEmail(true)
     } else {
       const index = users.map(user => user.email).indexOf(email)
+      const name = users[index].name
       if (users[index].password === password) {
         // console.log("senha correta")
         setErrorPassword(false)
         navigate("/favArtists")
+
+        const lastUser = { name, email, password }
+        console.log(lastUser)
+        localStorage.setItem("lastUser", JSON.stringify(lastUser))
       } else {
         // console.log("senha incorreta")
         setErrorPassword(true)

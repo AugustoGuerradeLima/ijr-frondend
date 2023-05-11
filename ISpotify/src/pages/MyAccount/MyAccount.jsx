@@ -14,14 +14,15 @@ import User from "../../images/User.svg";
 
 const Cadastro = () => {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
+  // const [name, setName] = useState('')
 
-  const [errorEmail, setErrorEmail] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [errorEveryVars, setErrorEveryVars] = useState(false)
-  const [users, setUsers] = useState([])
+  const lastUser = JSON.parse(localStorage.getItem("lastUser"))
+
+  const name = lastUser.name
+  const email = lastUser.email
+  const password = lastUser.password
 
   const navigate = useNavigate()
 
@@ -43,38 +44,18 @@ const Cadastro = () => {
 
   const handleName = (e) => { }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
 
-    if (!email || !password || !name) {
-      setErrorEveryVars(true);
-      setErrorEmail(false)
-      return;
-    }
+  //   
 
-    setSuccess(false)
-    setErrorEmail(false)
-    setErrorEveryVars(false)
+  //   
 
-    const users = JSON.parse(localStorage.getItem("users")) || []
+  //   setName(lastUser.name)
+  //   setEmail(lastUser.email)
+  //   setPassword(lastUser.password)
 
-    const foundUser = users.find((user) => user.email === email)
-
-    if (foundUser) {
-      console.error("Esse e-mail já está sendo utilizado.")
-      setErrorEmail(true)
-      // console.log(users[0].password)
-    } else {
-      setErrorEmail(false)
-      setSuccess(true)
-
-      const newUser = { name, email, password }
-      users.push(newUser)
-      localStorage.setItem("users", JSON.stringify(users))
-      console.log("Usuário cadastrado com sucesso!")
-      navigate("/")
-    }
-  }
+  // }
 
   return (
     <div className="main-container">
@@ -89,8 +70,9 @@ const Cadastro = () => {
               type="text"
               placeholder="Como devemos chamar você?"
               name="name"
+              disabled
               value={name}
-              onChange={(e) => setName(e.target.value)} />
+            />
             <img className="icon" src={User} alt="user icon" />
           </div>
 
@@ -99,16 +81,27 @@ const Cadastro = () => {
               type="email"
               placeholder="Email"
               name="email"
+              disabled
               value={email}
-              onChange={(e) => setEmail(e.target.value)} />
+            />
             <img className="icon" src={Email} alt="email icon" />
           </div>
 
 
         </div>
 
-        <button className="handle-btn" onClick={handleSubmit}>Trocar Email</button>
-        <button className="handle-btn" onClick={handleSubmit}>Trocar Senha</button>
+        <button
+          className="handle-btn"
+        // onClick={handleSubmit}
+        >
+          Trocar Email
+        </button>
+        <button
+          className="handle-btn"
+        // onClick={handleSubmit}
+        >
+          Trocar Senha
+        </button>
 
         {/* Teoricamente, isso teria que ser estilizado como um botão.
         <h2 className="button">
