@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import Artist from '../Artist/Artist'
 import { api } from '../../api/api'
@@ -39,7 +40,8 @@ const Artists = () => {
         url: artists?.images[0]?.url,
         name: artists?.name,
         id: artists?.id,
-        type: artists?.type
+        type: artists?.type,
+        genre: artists?.genres[0]
       }))
 
       setArtists(artistList)
@@ -59,9 +61,11 @@ const Artists = () => {
       {artists.map(((artist) => (
         <Artist
           key={artist.id}
+          artistId={artist.id}
           artistImage={artist.url}
           artistName={artist.name}
           artistType={artist.type}
+          artistGenre={artist.genre}
         />
       )))}
       </div>

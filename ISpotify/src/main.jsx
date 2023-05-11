@@ -12,6 +12,7 @@ import Cadastro from "./pages/Cadastro/Cadastro";
 import Logout from "./pages/Logout/Logout";
 import FavMusics from "./pages/FavMusics/FavMusics";
 import MyAccount from "./pages/MyAccount/MyAccount";
+import ArtistAlbum from "./pages/ArtistAlbum/ArtistAlbum";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,12 @@ const router = createBrowserRouter([
       {
         path: "/myAccount",
         element: < MyAccount/>,
-      }
+      },
+      {
+        path: "/artist/:id",
+        element: < ArtistAlbum/>,
+      },
+      
     ],
   },
 ]);
