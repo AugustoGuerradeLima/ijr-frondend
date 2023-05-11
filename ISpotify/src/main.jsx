@@ -10,6 +10,8 @@ import FavArtists from "./pages/FavArtists/FavArtists";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import Logout from "./pages/Logout/Logout";
+import FavMusics from "./pages/FavMusics/FavMusics";
+import MyAccount from "./pages/MyAccount/MyAccount";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +34,17 @@ const router = createBrowserRouter([
         element: <FavArtists />,
       },
       {
-        path: "/playlist",
-        element: <Playlist />,
+        path: "/favMusics",
+        element: < FavMusics/>,
       },
+      {
+        path: "/playlist",
+        element: < Playlist/>,
+      },
+      {
+        path: "/myAccount",
+        element: < MyAccount/>,
+      }
     ],
   },
 ]);

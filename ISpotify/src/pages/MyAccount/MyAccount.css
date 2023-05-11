@@ -1,0 +1,17 @@
+.main-container .handle-btn{
+  background-color: #3FE168;
+  color: white;
+  font-size: 20px;
+  margin-top: 2rem;
+  border-radius: 20px;
+  width: 65%;
+  height: 45px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main-container .handle-btn:hover{
+  background-color: #141414;
+  border: #3FE168 solid 1px;
+}
