@@ -28,6 +28,10 @@
   width: 20%;
 }
 
+.song-playlist-container .song .info .album-name::first-letter {
+  text-transform: uppercase;
+}
+
 .song-playlist-container .song .info span {
   width: 2%;
   margin-top: 1rem;

@@ -11,10 +11,6 @@
   color: aliceblue;
 }
 
-.artist-album-container .content-container{
-  border: 1px solid red;
-}
-
 .artist-album-container .content-container .artist-info {
   display: flex;
   margin-bottom: 8rem;

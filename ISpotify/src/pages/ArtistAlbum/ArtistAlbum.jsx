@@ -13,6 +13,8 @@ import ThreeDots from "../../images/threeDots.png";
 import ClockIcon from "../../images/clock.svg";
 import FavMusics from "../../images/favmusics-img.png";
 
+import SongPlaylist from '../../components/SongPlaylist/SongPlaylist';
+
 import "./ArtistAlbum.css"
 
 const ArtistAlbum = () => {
@@ -36,10 +38,10 @@ const ArtistAlbum = () => {
       setNameArtist(responseArtist?.data?.name)
 
       const songList = responseSong?.data?.tracks?.map((song) => ({
-        name: song?.name,
-        singer: responseArtist?.data?.name,
+        songName: song?.name,
+        artistName: responseArtist?.data?.name,
         id: song?.id,
-        genre: responseArtist?.data?.genres[0]
+        songGenre: responseArtist?.data?.genres[0]
       }))
 
       setSongs(songList)
@@ -113,11 +115,21 @@ const ArtistAlbum = () => {
           </div>
 
           <hr />
-          <div className='songs'>
+          {/* <div className='songs'>
             {songs.map(((song) => (
               <p>{song.name}</p>
             )))}
-          </div>
+          </div> */}
+          {songs.map(((song, index) => (
+            <SongPlaylist
+              key={song.id}
+              number={index + 1}
+              songName={song.songName}
+              artistName={song.artistName}
+              albumName={song.songGenre}
+              removeSong={() => removeSong(song.id)}
+            />
+          )))}
         </div>
       )}
     </div>
