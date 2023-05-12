@@ -19,11 +19,6 @@ const Cadastro = () => {
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
 
-  const [errorEmail, setErrorEmail] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [errorEveryVars, setErrorEveryVars] = useState(false)
-  const [users, setUsers] = useState([])
-
   const [errorCadastro, setErrorCadastro] = useState();
 
   const navigate = useNavigate()
@@ -34,67 +29,19 @@ const Cadastro = () => {
     const newUser = { name, email, password, role: 'user' }
 
     try {
-      const res = await cadastro({ name, email, password, role: 'user' });
+      const res = await cadastro(newUser);
       alert("Cadastro efetuado com sucesso!");
       setErrorCadastro(null);
       navigate("/");
     } catch (err) {
       // setErrorCadastro(err.response.data);
       alert("Erro no cadastro!");
+      setErrorCadastro(err.response.data)
     }
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   if (!email || !password || !name) {
-  //     setErrorEveryVars(true);
-  //     setErrorEmail(false)
-  //     return;
-  //   }
-
-  //   setSuccess(false)
-  //   setErrorEmail(false)
-  //   setErrorEveryVars(false)
-
-  //   const users = JSON.parse(localStorage.getItem("users")) || []
-
-  //   const foundUser = users.find((user) => user.email === email)
-
-  //   if (foundUser) {
-  //     console.error("Esse e-mail já está sendo utilizado.")
-  //     setErrorEmail(true)
-  //     // console.log(users[0].password)
-  //   } else {
-  //     setErrorEmail(false)
-  //     setSuccess(true)
-
-  //     const newUser = { name, email, password }
-  //     users.push(newUser)
-  //     localStorage.setItem("users", JSON.stringify(users))
-  //     console.log("Usuário cadastrado com sucesso!")
-  //     navigate("/")
-  //   }
-  // }
-
   return (
     <div className="main-container-content">
-      <div>
-        {errorEveryVars ? (<Alert variant="filled" severity="error">Por favor, preencha todos os campos.</Alert>) :
-          (<div></div>)
-        }
-      </div>
-      <div>
-        {errorEmail ? (<Alert variant="filled" severity="error">Esse e-mail já está sendo utilizado.</Alert>) :
-          (<div></div>)
-        }
-      </div>
-
-      <div>
-        {success ? (<Alert variant="filled" severity="success">Usuário Cadastrado com sucesso!</Alert>) :
-          (<div></div>)
-        }
-      </div>
 
       <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
 
@@ -129,6 +76,9 @@ const Cadastro = () => {
               value={name}
               onChange={(e) => setName(e.target.value)} />
             <img className="icon" src={User} alt="user icon" />
+          </div>
+          <div className="error-container">
+            {errorCadastro && <p className="error-message">{errorCadastro}</p>}
           </div>
         </div>
 
