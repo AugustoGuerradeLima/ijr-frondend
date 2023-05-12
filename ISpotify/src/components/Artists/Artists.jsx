@@ -57,7 +57,7 @@ const Artists = () => {
   }, [])
 
   return (
-      <div className='artist-grid'>
+    <div className='artist-grid'>
       {artists.map(((artist) => (
         <Artist
           key={artist.id}
@@ -68,7 +68,7 @@ const Artists = () => {
           artistGenre={artist.genre}
         />
       )))}
-      </div>
+    </div>
   )
 }
 

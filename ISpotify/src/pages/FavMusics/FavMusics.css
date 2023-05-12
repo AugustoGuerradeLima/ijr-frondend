@@ -1,0 +1,72 @@
+.favmusics-container {
+  /* height: 100%; */
+  min-height: 100vh;
+  width: 100%;
+  /* min-width: 100vw; */
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  padding-top: 9rem;
+  background: linear-gradient(180deg, rgba(94, 68, 255, 0.33) 0%, #000000 80.84%);
+  color: aliceblue;
+}
+
+.favmusics-container .favmusics-info {
+  display: flex;
+  margin-bottom: 8rem;
+}
+
+.favmusics-container .favmusics-info .favmusics-title {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.favmusics-container .favmusics-info .favmusics-title p {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.favmusics-container .favmusics-info .favmusics-title .favmusics-name {
+  margin-top: 1rem;
+  font-size: 48px;
+}
+
+.favmusics-container .favmusics-buttons {
+  display: flex;
+  margin-bottom: 6rem;
+}
+
+.favmusics-container .favmusics-buttons .play-button .PB {
+  max-width: 60px;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.favmusics-container .favmusics-buttons .download-button .DB {
+  margin-top: 10px;
+  max-width: 40px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.favmusics-container .songs-top-line {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.favmusics-container .songs-top-line .title {
+  width: 57%;
+}
+
+.favmusics-container .songs-top-line .genre {
+  width: 37%;
+}
+
+.favmusics-container hr {
+  width: 99%;
+  margin-bottom: 1rem;
+}

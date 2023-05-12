@@ -1,0 +1,44 @@
+.song-playlist-container {
+  width: 100%;
+}
+
+.song-playlist-container .song {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.song-playlist-container .song .info {
+  display: flex;
+  width: 92%;
+}
+
+.song-playlist-container .song .icons {
+  display: flex;
+}
+
+.song-playlist-container .song .info .name {
+  width: 60%;
+  display: inline;
+  margin-top: 0.5rem;
+}
+
+.song-playlist-container .song .info .album-name {
+  width: 20%;
+}
+
+.song-playlist-container .song .info span {
+  width: 2%;
+  margin-top: 1rem;
+}
+
+.song-playlist-container .song .icons .heart-icon {
+  cursor: pointer;
+}
+
+.song-playlist-container .song .icons .trash-icon {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
