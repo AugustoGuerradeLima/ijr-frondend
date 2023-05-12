@@ -30,7 +30,7 @@ export default function Login() {
   };
 
   return (
-    <div className="main-container">
+    <div className="main-container-content">
       <h1 className="logo">iSpotify ®</h1>
       <h2 className="Title">Música para todos.</h2>
 

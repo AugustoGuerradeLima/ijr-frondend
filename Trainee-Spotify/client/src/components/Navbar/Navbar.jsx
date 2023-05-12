@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { api } from "../../api/api";
+import { logout } from "../../services/DeleteUser";
 
 import AlbumDisc from "../../images/album.svg";
 import HeartDefault from "../../images/heart-default.svg";
@@ -12,21 +13,25 @@ import "./Navbar.css";
 
 const Navbar = () => {
 
-  // const handleLogout = async () => {
-  //   try {
-  //     await api.post("/users/logout");
-  //     navigate("/");
-  //   } catch (err) {
-  //     navigate("/");
-  //   }
-  // }
-
   const navigate = useNavigate()
 
   const handleLogout = async () => {
-    localStorage.removeItem("lastUser")
-    navigate("/")
+    try {
+      const res = await logout();
+      navigate("/");
+      alert("Logout feito com sucesso")
+    } catch (err) {
+      alert("Erro no logout")
+      navigate("/");
+    }
   }
+
+
+
+  // const handleLogout = async () => {
+  //   localStorage.removeItem("lastUser")
+  //   navigate("/")
+  // }
 
   const handleFavMusics = async () => {
     navigate("/favMusics")

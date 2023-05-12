@@ -6,6 +6,7 @@ import { api } from '../../api/api'
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Alert, AlertTitle } from '@mui/material';
+import { cadastro } from "../../services/CreateUser";
 
 
 import Email from "../../images/Email.svg";
@@ -23,55 +24,58 @@ const Cadastro = () => {
   const [errorEveryVars, setErrorEveryVars] = useState(false)
   const [users, setUsers] = useState([])
 
+  const [errorCadastro, setErrorCadastro] = useState();
+
   const navigate = useNavigate()
 
-  const createUser = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     const newUser = { name, email, password, role: 'user' }
 
     try {
-      await api.post("/users", newUser)
-      // await api.post("/users/login", { email, password })
-      console.log('Usuário Cadastrado!')
-      navigate("/")
-    } catch (error) {
-      console.error('Erro ao Cadastrar Usuário:', error);
+      const res = await cadastro({ name, email, password, role: 'user' });
+      alert("Cadastro efetuado com sucesso!");
+      setErrorCadastro(null);
+      navigate("/");
+    } catch (err) {
+      // setErrorCadastro(err.response.data);
+      alert("Erro no cadastro!");
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
 
-    if (!email || !password || !name) {
-      setErrorEveryVars(true);
-      setErrorEmail(false)
-      return;
-    }
+  //   if (!email || !password || !name) {
+  //     setErrorEveryVars(true);
+  //     setErrorEmail(false)
+  //     return;
+  //   }
 
-    setSuccess(false)
-    setErrorEmail(false)
-    setErrorEveryVars(false)
+  //   setSuccess(false)
+  //   setErrorEmail(false)
+  //   setErrorEveryVars(false)
 
-    const users = JSON.parse(localStorage.getItem("users")) || []
+  //   const users = JSON.parse(localStorage.getItem("users")) || []
 
-    const foundUser = users.find((user) => user.email === email)
+  //   const foundUser = users.find((user) => user.email === email)
 
-    if (foundUser) {
-      console.error("Esse e-mail já está sendo utilizado.")
-      setErrorEmail(true)
-      // console.log(users[0].password)
-    } else {
-      setErrorEmail(false)
-      setSuccess(true)
+  //   if (foundUser) {
+  //     console.error("Esse e-mail já está sendo utilizado.")
+  //     setErrorEmail(true)
+  //     // console.log(users[0].password)
+  //   } else {
+  //     setErrorEmail(false)
+  //     setSuccess(true)
 
-      const newUser = { name, email, password }
-      users.push(newUser)
-      localStorage.setItem("users", JSON.stringify(users))
-      console.log("Usuário cadastrado com sucesso!")
-      navigate("/")
-    }
-  }
+  //     const newUser = { name, email, password }
+  //     users.push(newUser)
+  //     localStorage.setItem("users", JSON.stringify(users))
+  //     console.log("Usuário cadastrado com sucesso!")
+  //     navigate("/")
+  //   }
+  // }
 
   return (
     <div className="main-container-content">
@@ -94,7 +98,7 @@ const Cadastro = () => {
 
       <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
 
-      <form action="" method="post" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="form-container">
           <div className="email-container">
             <input
