@@ -10,24 +10,6 @@ import "./Artists.css"
 
 const Artists = () => {
 
-  // const [artistsTEST, setArtistsTEST] = useState([
-  //   {
-  //     id: 1,
-  //     artistName: "Engenheiros do Hawaii",
-  //     Type: "Artista",
-  //   },
-  //   {
-  //     id: 2,
-  //     artistName: "Cidade Negra",
-  //     Type: "Artista",
-  //   },
-  //   {
-  //     id: 3,
-  //     artistName: "Capital Inicial",
-  //     Type: "Artista",
-  //   }
-  // ])
-
   const [artists, setArtists] = useState([])
 
   const getArtists = async () => {

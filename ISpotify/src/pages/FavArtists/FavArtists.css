@@ -3,14 +3,13 @@
   min-height: 100vh;
   width: 100%;
   color: aliceblue;
-  border: 1px solid black;
   display: flex;
   background-color: #181818;
 }
 
 .fav-artists-container .artist-section {
   padding: 5rem;
-  width: 80%;
+  width: 85%;
 }
 
 .fav-artists-container .artist-section h2 {

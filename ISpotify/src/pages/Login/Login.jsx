@@ -81,7 +81,7 @@ const Login = () => {
   }
 
   return (
-    <div className="main-container">
+    <div className="main-container-content">
       <div>
         {errorEveryVars ? (<Alert variant="filled" severity="error">Por favor, preencha todos os campos.</Alert>) :
           (<div></div>)
@@ -124,13 +124,7 @@ const Login = () => {
             <img className="icon" src={Cadeado} alt="password icon" />
           </div>
         </div>
-
-        {/* <h2 className="button">
-          <Link to={"/favArtists"}>ENTRAR</Link>
-        </h2> */}
-        {/* <input value="ENTRAR" className="btn-login" /> */}
         <button className="btn-login" onClick={handleSubmit}>ENTRAR</button>
-        {/* <button onClick={navigateToFavArtists}>Entrar</button> */}
       </form>
 
       <span>

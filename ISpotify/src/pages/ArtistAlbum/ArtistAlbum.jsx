@@ -11,9 +11,9 @@ import HeartIconLiked from "../../images/heart-liked.svg";
 import PlayButton from "../../images/playButton.png";
 import ThreeDots from "../../images/threeDots.png";
 import ClockIcon from "../../images/clock.svg";
-import FavMusics from "../../images/favmusics-img.png";
 
 import SongPlaylist from '../../components/SongPlaylist/SongPlaylist';
+import Navbar from '../../components/Navbar/Navbar';
 
 import "./ArtistAlbum.css"
 
@@ -79,6 +79,7 @@ const ArtistAlbum = () => {
 
   return (
     <div className='artist-album-container'>
+      <Navbar/>
       {!loading && (
         <div className='content-container'>
           <div className='artist-info'>
@@ -115,11 +116,6 @@ const ArtistAlbum = () => {
           </div>
 
           <hr />
-          {/* <div className='songs'>
-            {songs.map(((song) => (
-              <p>{song.name}</p>
-            )))}
-          </div> */}
           {songs.map(((song, index) => (
             <SongPlaylist
               key={song.id}

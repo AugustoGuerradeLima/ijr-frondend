@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import "./Cadastro.css";
-import Navbar from "../../components/Navbar/Navbar";
 
 import { api } from '../../api/api'
 import { Link } from "react-router-dom";
@@ -75,7 +74,7 @@ const Cadastro = () => {
   }
 
   return (
-    <div className="main-container">
+    <div className="main-container-content">
       <div>
         {errorEveryVars ? (<Alert variant="filled" severity="error">Por favor, preencha todos os campos.</Alert>) :
           (<div></div>)
@@ -130,11 +129,6 @@ const Cadastro = () => {
         </div>
 
         <input type="submit" value="CADASTRAR" className="btn-cadastro" />
-
-        {/* Teoricamente, isso teria que ser estilizado como um botão.
-        <h2 className="button">
-           <Link to={"/"}>Cadastrar</Link>
-        </h2> */}
       </form>
 
       <span>

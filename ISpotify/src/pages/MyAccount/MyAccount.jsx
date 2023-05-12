@@ -11,6 +11,7 @@ import "./MyAccount.css";
 import Email from "../../images/Email.svg";
 import Cadeado from "../../images/Cadeado.svg";
 import User from "../../images/User.svg";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Cadastro = () => {
 
@@ -59,55 +60,53 @@ const Cadastro = () => {
 
   return (
     <div className="main-container">
+      <Navbar />
+      <div className="main-container-content">
+        <h1 className="title">Minha Conta</h1>
 
-      <h1 className="title">Minha Conta</h1>
+        <form action="" method="post">
+          <div className="form-container">
 
-      <form action="" method="post">
-        <div className="form-container">
+            <div className="user-name-container">
+              <input
+                type="text"
+                placeholder="Como devemos chamar você?"
+                name="name"
+                disabled
+                value={name}
+              />
+              <img className="icon" src={User} alt="user icon" />
+            </div>
 
-          <div className="user-name-container">
-            <input
-              type="text"
-              placeholder="Como devemos chamar você?"
-              name="name"
-              disabled
-              value={name}
-            />
-            <img className="icon" src={User} alt="user icon" />
+            <div className="email-container">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                disabled
+                value={email}
+              />
+              <img className="icon" src={Email} alt="email icon" />
+            </div>
+
+
           </div>
 
-          <div className="email-container">
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              disabled
-              value={email}
-            />
-            <img className="icon" src={Email} alt="email icon" />
-          </div>
+          <button
+            className="handle-btn"
+          // onClick={handleSubmit}
+          >
+            Trocar Email
+          </button>
+          <button
+            className="handle-btn"
+          // onClick={handleSubmit}
+          >
+            Trocar Senha
+          </button>
+        </form>
+      </div>
 
-
-        </div>
-
-        <button
-          className="handle-btn"
-        // onClick={handleSubmit}
-        >
-          Trocar Email
-        </button>
-        <button
-          className="handle-btn"
-        // onClick={handleSubmit}
-        >
-          Trocar Senha
-        </button>
-
-        {/* Teoricamente, isso teria que ser estilizado como um botão.
-        <h2 className="button">
-           <Link to={"/"}>Cadastrar</Link>
-        </h2> */}
-      </form>
     </div>
   );
 };
