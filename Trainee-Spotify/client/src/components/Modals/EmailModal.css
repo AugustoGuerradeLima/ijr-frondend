@@ -1,0 +1,35 @@
+.emailModal{
+    background-color: black;
+    border-radius:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-title{
+    color:white;
+  } 
+
+.new-email{
+    background-color:#3C3C3C;
+    color:#3C3C3C;
+    font-weight: bold;
+    padding:5px 0 5px 0;
+    margin:5px 0 5px 0;
+    display:block;
+}
+
+.cancel-btn, .confirm-btn{
+    padding: 7px 15px 7px 15px;
+    border-radius:20px;
+    color:white;
+    font-weight: bold;
+}
+
+.cancel-btn{
+    background-color: #E42D2D;
+}
+
+.confirm-btn{
+    background-color:#3FE168;
+}

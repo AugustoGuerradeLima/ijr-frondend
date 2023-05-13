@@ -12,6 +12,8 @@ import Email from "../../images/Email.svg";
 import Cadeado from "../../images/Cadeado.svg";
 import User from "../../images/User.svg";
 import Navbar from "../../components/Navbar/Navbar";
+import EmailModal from "../../components/Modals/EmailModal"
+import PasswordModal from "../../components/Modals/PasswordModal"
 
 const Cadastro = () => {
 
@@ -19,11 +21,11 @@ const Cadastro = () => {
   // const [password, setPassword] = useState('')
   // const [name, setName] = useState('')
 
-  const lastUser = JSON.parse(localStorage.getItem("lastUser"))
+  // const lastUser = JSON.parse(localStorage.getItem("lastUser"))
 
-  const name = lastUser.name
-  const email = lastUser.email
-  const password = lastUser.password
+  // const name = lastUser.name
+  // const email = lastUser.email
+  // const password = lastUser.password
 
   const navigate = useNavigate()
 
@@ -73,7 +75,7 @@ const Cadastro = () => {
                 placeholder="Como devemos chamar você?"
                 name="name"
                 disabled
-                value={name}
+                // value={name}
               />
               <img className="icon" src={User} alt="user icon" />
             </div>
@@ -84,12 +86,10 @@ const Cadastro = () => {
                 placeholder="Email"
                 name="email"
                 disabled
-                value={email}
+                // value={email}
               />
               <img className="icon" src={Email} alt="email icon" />
             </div>
-
-
           </div>
 
           <button
@@ -105,6 +105,13 @@ const Cadastro = () => {
             Trocar Senha
           </button>
         </form>
+      </div>
+      
+      <div className="ModalEmail">
+        <EmailModal/>
+      </div>
+      <div className="ModalPassword">
+        <PasswordModal/>
       </div>
 
     </div>
