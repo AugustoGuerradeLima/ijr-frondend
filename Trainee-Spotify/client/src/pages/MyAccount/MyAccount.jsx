@@ -17,6 +17,11 @@ import PasswordModal from "../../components/Modals/PasswordModal"
 
 const Cadastro = () => {
 
+  const [displayEmailChange, setDisplayEmailChange] = useState(false)
+  const handleDisplayEmailChange = (e) => {
+    e.preventDefault()
+    setDisplayEmailChange(true)}
+
   // const [email, setEmail] = useState('')
   // const [password, setPassword] = useState('')
   // const [name, setName] = useState('')
@@ -43,9 +48,9 @@ const Cadastro = () => {
   //   }
   // }
 
-  const handleEmail = (e) => { }
+  // const handleEmail = (e) => { }
 
-  const handleName = (e) => { }
+  // const handleName = (e) => { }
 
   // const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -94,7 +99,7 @@ const Cadastro = () => {
 
           <button
             className="handle-btn"
-          // onClick={handleSubmit}
+            onClick={handleDisplayEmailChange}
           >
             Trocar Email
           </button>
