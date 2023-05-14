@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from 'react'
+
+import { useState, useEffect } from 'react'
 
 import { api } from '../../api/api'
 import { Link } from "react-router-dom";
@@ -16,6 +18,29 @@ import EmailModal from "../../components/Modals/EmailModal"
 import PasswordModal from "../../components/Modals/PasswordModal"
 
 const Cadastro = () => {
+
+  const navigate = useNavigate()
+
+  const [currentUserName, setCurrentUserName] = useState("")
+  const [currentUserEmail, setCurrentUserEmail] = useState("")
+
+  const getCurrentUser = async()=>{
+    try{
+      const response = await api.get(`/users/user`)
+
+      setCurrentUserName(response?.data?.name)
+      setCurrentUserEmail(response?.data?.email)
+
+      console.log(currentUserName)
+      
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{
+    async () => await getCurrentUser()
+  },[])
 
   const [displayEmailChange, setDisplayEmailChange] = useState(false)
   const handleDisplayEmailChange = (e) => {
@@ -45,8 +70,6 @@ const Cadastro = () => {
   // const name = lastUser.name
   // const email = lastUser.email
   // const password = lastUser.password
-
-  const navigate = useNavigate()
 
   // const createUser = async(e)=>{
   //   e.preventDefault()
@@ -94,7 +117,7 @@ const Cadastro = () => {
                 placeholder="Como devemos chamar você?"
                 name="name"
                 disabled
-                // value={name}
+                value={currentUserName}
               />
               <img className="icon" src={User} alt="user icon" />
             </div>
@@ -105,7 +128,7 @@ const Cadastro = () => {
                 placeholder="Email"
                 name="email"
                 disabled
-                // value={email}
+                value={currentUserEmail}
               />
               <img className="icon" src={Email} alt="email icon" />
             </div>
