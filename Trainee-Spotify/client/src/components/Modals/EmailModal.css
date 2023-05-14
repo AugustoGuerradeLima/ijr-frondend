@@ -1,5 +1,6 @@
 .emailModal{
     background-color: black;
+    padding:7px 50px 7px 50px;
     border-radius:10px;
     display:flex;
     align-items: center;
@@ -16,7 +17,7 @@
     color:#3C3C3C;
     font-weight: bold;
     padding:5px 0 5px 0;
-    margin:5px 0 5px 0;
+    margin:10px 0 10px 0;
     display:block;
 }
 
