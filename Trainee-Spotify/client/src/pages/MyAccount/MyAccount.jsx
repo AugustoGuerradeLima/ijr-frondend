@@ -39,7 +39,9 @@ const Cadastro = () => {
   }
 
   useEffect(()=>{
-    async () => await getCurrentUser()
+    (async () =>{
+      await getCurrentUser()
+    })()
   },[])
 
   const [displayEmailChange, setDisplayEmailChange] = useState(false)
