@@ -8,6 +8,7 @@
 
 .modal-title{
     color:white;
+    display:block;
   } 
 
 .new-email{
@@ -19,11 +20,17 @@
     display:block;
 }
 
-.cancel-btn, .confirm-btn{
+.cancel-btn, 
+.confirm-btn{
     padding: 7px 15px 7px 15px;
     border-radius:20px;
     color:white;
     font-weight: bold;
+}
+
+.cancel-btn:hover, 
+.confirm-btn:hover{
+    cursor:pointer;
 }
 
 .cancel-btn{

@@ -20,8 +20,22 @@ const Cadastro = () => {
   const [displayEmailChange, setDisplayEmailChange] = useState(false)
   const handleDisplayEmailChange = (e) => {
     e.preventDefault()
-    setDisplayEmailChange(true)}
+    setDisplayEmailChange(true)
+  }
 
+  const [displayPasswordChange, setDisplayPasswordChange] = useState(false)
+  const handleDisplayPasswordChange = (e) => {
+    e.preventDefault();
+    setDisplayPasswordChange(true)
+  }
+
+  const cancelEmailChange = () =>{
+    setDisplayEmailChange(false)
+  }
+
+  const cancelPasswordChange = () =>{
+    setDisplayPasswordChange(false)
+  }
   // const [email, setEmail] = useState('')
   // const [password, setPassword] = useState('')
   // const [name, setName] = useState('')
@@ -105,20 +119,23 @@ const Cadastro = () => {
           </button>
           <button
             className="handle-btn"
-          // onClick={handleSubmit}
+            onClick={handleDisplayPasswordChange}
           >
             Trocar Senha
           </button>
         </form>
       </div>
-      
-      <div className="ModalEmail">
-        <EmailModal/>
-      </div>
-      <div className="ModalPassword">
-        <PasswordModal/>
-      </div>
 
+
+      {displayEmailChange?      
+      <div className="ModalEmail">
+        <EmailModal cancelChange={cancelEmailChange}/>
+      </div>:null}
+
+      {displayPasswordChange?
+          <div className="ModalPassword">
+            <PasswordModal cancelChange={cancelPasswordChange}/>
+          </div>:null}
     </div>
   );
 };

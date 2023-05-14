@@ -1,7 +1,10 @@
 import React from 'react'
 import "./PasswordModal.css"
 
-function PasswordModal() {
+function PasswordModal(props) {
+  const cancel = () =>{
+    props.cancelChange()
+  }
   return (
     <div className="passwordModal">
         <h2 className= "modal-title">Nova Senha</h2>
@@ -23,7 +26,7 @@ function PasswordModal() {
             />
 
 
-            <input className="cancel-btn" type="button" value="Cancelar"/>
+            <input className="cancel-btn" type="button" value="Cancelar" onClick={cancel}/>
             <input className="confirm-btn" type="submit" value="Confirmar" />
         </form>
     </div>
