@@ -28,7 +28,6 @@ const Cadastro = () => {
   const getCurrentUser = async()=>{
     try{
       const response = await current()
-      // api.get(`/users/user`)
 
       setCurrentUserName(response?.data?.name)
       setCurrentUserEmail(response?.data?.email)
