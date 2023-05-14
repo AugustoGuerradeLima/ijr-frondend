@@ -6,6 +6,7 @@ import { api } from '../../api/api'
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Alert, AlertTitle } from '@mui/material';
+import { current } from "../../services/CurrentUser";
 
 import "./MyAccount.css";
 
@@ -26,7 +27,8 @@ const Cadastro = () => {
 
   const getCurrentUser = async()=>{
     try{
-      const response = await api.get(`/users/user`)
+      const response = await current()
+      // api.get(`/users/user`)
 
       setCurrentUserName(response?.data?.name)
       setCurrentUserEmail(response?.data?.email)
