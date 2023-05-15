@@ -1,8 +1,9 @@
 .emailModal{
     background-color: black;
-    padding:7px 50px 7px 50px;
+    padding:20px 50px 20px 50px;
     border-radius:10px;
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -15,8 +16,9 @@
 .new-email{
     background-color:#3C3C3C;
     color:white;
-    font-weight: bold;
-    padding:5px 0 5px 0;
+    font-size: large;
+    width: 100%;
+    padding:10px 0 10px 5px;
     margin:10px 0 10px 0;
     border:none;
     display:block;
@@ -25,6 +27,8 @@
 .cancel-btn, 
 .confirm-btn{
     padding: 7px 15px 7px 15px;
+    margin: 0 15px 0 15px;
+    font-size: large;
     border-radius:20px;
     color:white;
     font-weight: bold;

@@ -18,6 +18,10 @@ function EmailModal(props) {
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
+    if(newEmail==""){
+      alert("O novo e-mail não pode ser vazio.")
+      return
+    }
     try{
       const response = await current()
       setUserId(response?.data?.id)

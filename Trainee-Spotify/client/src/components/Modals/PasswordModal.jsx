@@ -18,6 +18,10 @@ function PasswordModal(props) {
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
+    if(newPassword==""){
+      alert("A nova senha não pode ser vazia.")
+      return
+    }
     if(newPassword != confirmNewPassword){
       alert("A nova senha e a confirmação devem coincidir")
       return
