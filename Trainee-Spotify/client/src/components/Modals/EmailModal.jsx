@@ -6,14 +6,12 @@ import { api } from '../../api/api'
 import {current} from '../../services/CurrentUser'
 import { upemail } from "../../services/UpdateEmail"
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 import "./EmailModal.css"
 
 
 function EmailModal(props) {
-
-  const navigate = useNavigate()
 
   const [userId,setUserId] = useState("")
   const [newEmail,setNewEmail] = useState("")
@@ -26,9 +24,8 @@ function EmailModal(props) {
       console.log(userId)
       await upemail(userId,newEmail)
       alert("E-mail atualizado com sucesso!")
-      props.cancelChange()
+      window.location.reload()
     }catch(error){
-      alert("Erro ao atualizar e-mail.")
       console.log(error)
     }
   } 
