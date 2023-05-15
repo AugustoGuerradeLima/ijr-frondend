@@ -3,12 +3,17 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 import { api } from '../../api/api'
-import { userid } from "../../services/GetUserId";
+import {current} from '../../services/CurrentUser'
+import { upemail } from "../../services/UpdateEmail"
+
+import { useNavigate } from "react-router-dom";
 
 import "./EmailModal.css"
 
 
 function EmailModal(props) {
+
+  const navigate = useNavigate()
 
   const [userId,setUserId] = useState("")
   const [newEmail,setNewEmail] = useState("")
@@ -16,10 +21,14 @@ function EmailModal(props) {
   const handleSubmit = async (e) =>{
     e.preventDefault()
     try{
-      const response = await userid()
-      setUserId(response)
-
+      const response = await current()
+      setUserId(response?.data?.id)
+      console.log(userId)
+      await upemail(userId,newEmail)
+      alert("E-mail atualizado com sucesso!")
+      props.cancelChange()
     }catch(error){
+      alert("Erro ao atualizar e-mail.")
       console.log(error)
     }
   } 
