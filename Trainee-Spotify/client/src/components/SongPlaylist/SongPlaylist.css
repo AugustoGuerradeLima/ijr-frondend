@@ -26,6 +26,7 @@
 
 .song-playlist-container .song .info .album-name {
   width: 20%;
+  margin-top: 0.5rem;
 }
 
 .song-playlist-container .song .info .album-name::first-letter {
