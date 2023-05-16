@@ -64,46 +64,6 @@ const Cadastro = () => {
   const cancelPasswordChange = () =>{
     setDisplayPasswordChange(false)
   }
-  // const [email, setEmail] = useState('')
-  // const [password, setPassword] = useState('')
-  // const [name, setName] = useState('')
-
-  // const lastUser = JSON.parse(localStorage.getItem("lastUser"))
-
-  // const name = lastUser.name
-  // const email = lastUser.email
-  // const password = lastUser.password
-
-  // const createUser = async(e)=>{
-  //   e.preventDefault()
-
-  //   const newUser = {name,email,password,role:'user'}
-
-  //   try{
-  //     const response = await api.post("/users",newUser)
-  //     console.log('Usuário Cadastrado!',response.newUser)
-  //     navigate("/")
-  //   }catch(error){
-  //     console.error('Erro ao Cadastrar Usuário:',error);
-  //   }
-  // }
-
-  // const handleEmail = (e) => { }
-
-  // const handleName = (e) => { }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   
-
-  //   
-
-  //   setName(lastUser.name)
-  //   setEmail(lastUser.email)
-  //   setPassword(lastUser.password)
-
-  // }
 
   return (
     <div className="main-container">
