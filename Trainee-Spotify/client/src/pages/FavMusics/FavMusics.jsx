@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
 
 import DownloadIcon from "../../images/download.svg";
 import PlayButton from "../../images/playButton.png";
@@ -8,9 +9,35 @@ import FavMusicsImg from "../../images/favmusics-img.png";
 import "./FavMusics.css"
 
 import Navbar from '../../components/Navbar/Navbar';
-
+import SongFavPlaylist from '../../components/SongFavPlaylist/SongFavPlaylist';
 
 const FavMusics = () => {
+
+  const [songs, setSongs] = useState([])
+
+  useEffect(() => {
+    const likedMusics = JSON.parse(localStorage.getItem("favmusics"))
+
+    setSongs(likedMusics)
+
+  }, [])
+
+  const removeSong = (id) => {
+    const updatedSongs = songs.filter((song) => song.id !== id)
+    setSongs(updatedSongs)
+  }
+
+  const unlikedSong = (songName) => {
+    const favMusics = JSON.parse(localStorage.getItem("favmusics")) || []
+
+    const index = favMusics.map(music => music.songName).indexOf(songName)
+    favMusics.splice(index, 1)
+    localStorage.setItem("favmusics", JSON.stringify(favMusics))
+
+    const updateFavSongs = JSON.parse(localStorage.getItem("favmusics")) || []
+    setSongs(updateFavSongs)
+  }
+
   return (
     <div className="favmusics-main-container">
       <Navbar />
@@ -40,6 +67,17 @@ const FavMusics = () => {
         </div>
 
         <hr />
+
+        {songs.map(((song, index) => (
+          <SongFavPlaylist
+            key={song.id}
+            number={index + 1}
+            songName={song.songName}
+            artistName={song.artistName}
+            albumName={song.albumName}
+            removeSong={() => unlikedSong(song.songName)}
+          />
+        )))}
 
       </div>
     </div>
