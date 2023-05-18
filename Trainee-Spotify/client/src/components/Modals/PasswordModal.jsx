@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { api } from '../../api/api'
 import {current} from '../../services/CurrentUser'
 import { uppassword } from "../../services/UpdatePassword"
+import { Alert } from '@mui/material'
 
 import "./PasswordModal.css"
 
@@ -15,23 +16,26 @@ function PasswordModal(props) {
   const [currentPassword,setCurrentPassword] = useState("")
   const [newPassword,setNewPassword] = useState("")
   const [confirmNewPassword,setConfirmNewPassword] = useState("")
+  const [errorPassword,setErrorPassword] = useState()
+  const [successPassword,setSuccessPassword] = useState()
 
   const handleSubmit = async (e) =>{
     e.preventDefault()
     if(newPassword==""){
-      alert("A nova senha não pode ser vazia.")
+      setErrorPassword("A nova senha não pode ser vazia.")
       return
     }
     if(newPassword != confirmNewPassword){
-      alert("A nova senha e a confirmação devem coincidir")
+      setErrorPassword("A nova senha e a confirmação devem coincidir.")
       return
     }
     try{
       const response = await current()
+      setErrorPassword()
       setUserId(response?.data?.id)
       console.log(userId)
       await uppassword(userId,newPassword)
-      alert("Senha atualizada com sucesso!")
+      setSuccessPassword("Senha atualizada com sucesso!")
       window.location.reload()
     }catch(error){
       console.log(error)
@@ -44,6 +48,15 @@ function PasswordModal(props) {
   return (
     <div className="passwordModal">
         <h2 className= "modal-title">Nova Senha</h2>
+
+      <div className="error-container">
+          {errorPassword?(<Alert variant="filled" severity="error">{errorPassword}</Alert>):null}
+      </div>
+
+      <div className="sucess-container">
+          {successPassword?(<Alert variant="filled" severity='success'>{successPassword}</Alert>):null}
+      </div>
+
         <form onSubmit={handleSubmit}>
             <input
                 className="old-password"

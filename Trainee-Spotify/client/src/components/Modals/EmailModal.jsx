@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { api } from '../../api/api'
 import {current} from '../../services/CurrentUser'
 import { upemail } from "../../services/UpdateEmail"
+import { Alert } from '@mui/material'
 
 import { useNavigate } from "react-router-dom"
 
@@ -16,18 +17,22 @@ function EmailModal(props) {
   const [userId,setUserId] = useState("")
   const [newEmail,setNewEmail] = useState("")
 
+  const [errorEmail,setErrorEmail]=useState(false)
+  const [successEmail,setSuccessEmail]=useState(false)
+
   const handleSubmit = async (e) =>{
     e.preventDefault()
     if(newEmail==""){
-      alert("O novo e-mail não pode ser vazio.")
+      setErrorEmail(true)
       return
     }
     try{
       const response = await current()
+      setErrorEmail(false)
       setUserId(response?.data?.id)
       console.log(userId)
       await upemail(userId,newEmail)
-      alert("E-mail atualizado com sucesso!")
+      setSuccessEmail("E-mail atualizado com sucesso!")
       window.location.reload()
     }catch(error){
       console.log(error)
@@ -40,6 +45,15 @@ function EmailModal(props) {
   return (
     <div className="emailModal">
       <h2 className= "modal-title">Novo E-mail</h2>
+
+      <div className="error-container">
+        {errorEmail ? (<Alert variant="filled" severity="error">O novo e-mail não pode ser vazio.</Alert>):null}
+      </div>
+
+      <div className="sucess-container">
+          {successEmail?(<Alert variant="filled" severity='success'>{successEmail}</Alert>):null}
+      </div>
+
         <form onSubmit={handleSubmit}>
             <input
                 className="new-email"
