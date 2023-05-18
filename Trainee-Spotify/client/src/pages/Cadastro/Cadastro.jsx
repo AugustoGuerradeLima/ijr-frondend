@@ -20,11 +20,17 @@ const Cadastro = () => {
   const [name, setName] = useState('')
 
   const [errorCadastro, setErrorCadastro] = useState();
+  const [error, setError] = useState("")
 
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!email || !password || name) {
+      setErrorCadastro("Por Favor, preencha todos os campos!")
+      return;
+    }
 
     const newUser = { name, email, password, role: 'user' }
 
@@ -44,6 +50,10 @@ const Cadastro = () => {
     <div className="main-container-content">
 
       <h1 className="title">Inscrever-se em uma conta grátis do iSpotify ®</h1>
+
+      <div className="error-container">
+        {errorCadastro ? (<Alert variant="filled" severity="error">{errorCadastro}</Alert>) : (<div></div>)}
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div className="form-container">
@@ -76,9 +86,6 @@ const Cadastro = () => {
               value={name}
               onChange={(e) => setName(e.target.value)} />
             <img className="icon" src={User} alt="user icon" />
-          </div>
-          <div className="error-container">
-            {errorCadastro && <p className="error-message">{errorCadastro}</p>}
           </div>
         </div>
 

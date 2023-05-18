@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Alert, AlertTitle } from '@mui/material';
 
 import { login } from "../../services/Login";
 
@@ -12,12 +13,19 @@ import "./Login.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [errorLogin, setErrorLogin] = useState();
+  const [error, setError] = useState("")
 
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    if(!email || !password){
+      setErrorLogin("Por Favor, preencha todos os campos!")
+      return;
+    }
 
     try {
       const res = await login({ email, password });
@@ -33,6 +41,10 @@ export default function Login() {
     <div className="main-container-content">
       <h1 className="logo">iSpotify ®</h1>
       <h2 className="Title">Música para todos.</h2>
+
+      <div className="error-container">
+        {errorLogin ? (<Alert variant="filled" severity="error">{errorLogin}</Alert>) : (<div></div>)}
+      </div>
 
       <form onSubmit={handleLogin}>
         <div className="form-container">
@@ -57,9 +69,6 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <img className="icon" src={Cadeado} alt="password icon" />
-          </div>
-          <div className="error-container">
-            {errorLogin && <p className="error-message">{errorLogin}</p>}
           </div>
         </div>
 

@@ -60,7 +60,11 @@
     margin-left: 3px;
 }
 
-.main-container-content .error-container .error-message{
+/* .main-container-content .error-container .error-message{
     margin-top: 1rem;
     font-size: 18px;
+} */
+
+.main-container-content .error-container{
+    margin-top: 1rem;
 }
